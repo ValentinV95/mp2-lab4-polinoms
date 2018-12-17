@@ -1,0 +1,15 @@
+﻿  test_polinoms.cpp
+e:\документы\mp2-lab4-polinoms\samples\include\list.h(110): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+  e:\документы\mp2-lab4-polinoms\samples\include\list.h(103): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
+  e:\документы\mp2-lab4-polinoms\samples\include\list.h(268): note: см. ссылку на создание экземпляров функции шаблон при компиляции "void List<int>::Mull(double)"
+  e:\документы\mp2-lab4-polinoms\test\test_polinoms.cpp(7): note: см. ссылку на создание экземпляров класса шаблон при компиляции "List<int>"
+  test_main.cpp
+  test_list.cpp
+e:\документы\mp2-lab4-polinoms\samples\include\list.h(110): warning C4244: *=: преобразование "double" в "int", возможна потеря данных
+  e:\документы\mp2-lab4-polinoms\samples\include\list.h(103): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
+  e:\документы\mp2-lab4-polinoms\test\test_list.cpp(59): note: см. ссылку на создание экземпляров функции шаблон при компиляции "void List<int>::Mull(double)"
+  e:\документы\mp2-lab4-polinoms\test\test_list.cpp(7): note: см. ссылку на создание экземпляров класса шаблон при компиляции "List<int>"
+  gtest-all.cc
+  Создание кода...
+  test.vcxproj -> E:\Документы\mp2-lab4-polinoms\sln\vc15\Debug\test.exe
+  test.vcxproj -> E:\Документы\mp2-lab4-polinoms\sln\vc15\Debug\test.pdb (Full PDB)
