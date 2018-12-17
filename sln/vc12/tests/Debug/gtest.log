@@ -1,0 +1,10 @@
+﻿Построение начато 04.12.2018 21:15:49.
+     1>Проект "C:\Users\Настя\Desktop\Лабы и проги\mp2-lab3-arithmetic\sln\vc12\gtest\gtest.vcxproj" в узле 4 (целевые объекты Build).
+     1>Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\Настя\Desktop\Лабы и проги\mp2-lab4-polinoms\Polioms\Debug\gtest.lib" /NOLOGO "Debug\gtest-all.obj"
+         gtest.vcxproj -> C:\Users\Настя\Desktop\Лабы и проги\mp2-lab4-polinoms\Polioms\Debug\gtest.lib
+     1>Построение проекта "C:\Users\Настя\Desktop\Лабы и проги\mp2-lab3-arithmetic\sln\vc12\gtest\gtest.vcxproj" завершено (целевые объекты Build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:01.92
