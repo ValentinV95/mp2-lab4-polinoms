@@ -346,7 +346,7 @@ Polynom Polynom::operator*(const Polynom &p) const
 
 			double coef = s->coef * f->coef;
 			int exp = x * 100 + y * 10 + z;
-			a.ins_last(coef, exp);
+			a.ins(coef, exp);
 
 			s = s->next;
 		}
