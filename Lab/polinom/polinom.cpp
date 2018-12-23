@@ -8,7 +8,7 @@ Polinom::Polinom() {
 	temp->next = nullptr;
 	temp->prev = nullptr;
 	temp->coef = 0.0;
-	temp->pow = -0.5;
+	temp->pow = -2;
 	pol = temp;
 }
 
@@ -140,7 +140,9 @@ void Polinom::del_dublicate() {
 }
 
 Polinom Polinom::operator*(double v) const {
-	Polinom ans = *this;
+	Polinom ans;
+	if (v < eps) return ans;
+	ans = *this;
 	Monom* temp = ans.pol->next;
 	while (temp != nullptr) {
 		temp->coef = temp->coef * v;
@@ -268,6 +270,9 @@ std::istream& operator >> (std::istream& is, Polinom& p) {
 		std::cout << "Vvedite koef" << "\n";
 		double coef;
 		is >> coef;
+		if (coef < eps) {
+			continue;
+		}
 		std::cout << "Vvedite power x" << "\n";
 		int pow_x;
 		is >> pow_x;
