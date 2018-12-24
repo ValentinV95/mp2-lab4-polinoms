@@ -1,14 +1,14 @@
 #include "polinom.h"
 #include <iostream>
 
-double eps = 1e-6;
+double eps = 1e-8;
 
 Polinom::Polinom() {
 	Monom *temp = new Monom;
 	temp->next = nullptr;
 	temp->prev = nullptr;
 	temp->coef = 0.0;
-	temp->pow = -2;
+	temp->pow = -0.5;
 	pol = temp;
 }
 
@@ -28,7 +28,10 @@ void Polinom::ins(double coef, int pow) {
 	else {
 		temp = temp->next;
 		if (temp->next == nullptr) {
-			if (temp->pow > pow) {
+			if (temp->pow == pow) {
+				temp->coef = 2 * temp->coef;
+			}
+			else if (temp->pow > pow) {
 				temp->next = ins;
 				ins->prev = temp;
 				ins->next = nullptr;
@@ -44,7 +47,7 @@ void Polinom::ins(double coef, int pow) {
 		else {
 			bool f = true;
 			while (temp->next != nullptr) {
-				if (temp->pow <= pow) {
+				if (temp->pow < pow) {
 					Monom *t1 = temp->prev;
 					temp->prev->next = ins;
 					ins->prev = t1;
@@ -53,10 +56,17 @@ void Polinom::ins(double coef, int pow) {
 					f = false;
 					break;
 				}
+				else if (temp->pow == pow) {
+					temp->coef = 2 * temp->coef;
+					break;
+				}
 				temp = temp->next;
 			}
 			if (f) {
-				if (temp->pow > pow) {
+				if (temp->pow == pow) {
+					temp->coef = 2 * temp->coef;
+				}
+				else if (temp->pow > pow) {
 					temp->next = ins;
 					ins->prev = temp;
 					ins->next = nullptr;
