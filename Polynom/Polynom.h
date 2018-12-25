@@ -28,7 +28,6 @@ class Polynom
 {
 private:
 	Monom * Fhead;
-	//int size;
 public:
 	Polynom();
 	Polynom(struct m *, int);
@@ -38,11 +37,6 @@ public:
 	void Delete(int);
 	bool IsEmpty();
 	bool operator==(const Polynom &) const;
-	/*bool Polynom::operator!=(const Polynom &p) const
-	{
-	return !(*this == p);
-	}*/
-
 	Polynom& operator=(const Polynom &);
 	Polynom operator+(Polynom &);
 	Polynom operator-(Polynom &);

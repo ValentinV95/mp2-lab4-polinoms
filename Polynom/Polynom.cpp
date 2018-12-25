@@ -199,7 +199,8 @@ Polynom Polynom:: operator*(double a) {
 }
 Polynom Polynom:: operator-(Polynom &A) {
 	Polynom C;
-	//C = *this + A * (-1);
+	C = A * (-1);
+	C = *this + C;
 	return C;
 }
 Polynom Polynom:: operator*(Polynom &A) {

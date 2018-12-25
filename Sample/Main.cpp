@@ -8,7 +8,7 @@ using namespace std;
 
 void main()
 {
-	/*int k = 0, l;
+	int k = 0, l;
 	double c;
 	do {
 		cout << "Choose one of the items:" << '\n';
@@ -69,5 +69,5 @@ void main()
 				}
 			}
 		}
-	} while (k < 2);*/
+	} while (k < 2);
 }
