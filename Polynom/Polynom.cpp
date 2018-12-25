@@ -74,15 +74,6 @@ void Polynom::Insert(double _coef, int _deg) {
 				atemp->Prev = temp; atemp->Next = temp->Next;
 				temp->Next->Prev = atemp;
 				temp->Next = atemp;
-
-
-				/*Monom*atemp = new Monom;
-				atemp->coef = _coef;
-				atemp->deg = _deg;
-				atemp->Prev = temp->Prev;
-				temp->Prev = atemp;
-				temp->Prev->Next = atemp;
-				atemp->Next = temp;*/
 			}
 			else {
 				temp->Next->coef += _coef;
@@ -180,12 +171,7 @@ Polynom Polynom:: operator+(Polynom &A) {
 		atemp = atemp->Next;
 	}
 
-	//Polynom C(*this);
-	//Monom*temp = A.Fhead->Next;
-	//while (temp!=NULL) {
-	//	C.Insert(temp->coef, temp->deg);
-	//	temp=temp->Next;
-	//}
+	
 	return C;
 }
 Polynom Polynom:: operator*(double a) {
