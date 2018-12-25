@@ -29,7 +29,7 @@ void Polinom::ins(double coef, int pow) {
 		temp = temp->next;
 		if (temp->next == nullptr) {
 			if (temp->pow == pow) {
-				temp->coef = 2 * temp->coef;
+				temp->coef = temp->coef + coef;
 			}
 			else if (temp->pow > pow) {
 				temp->next = ins;
@@ -57,14 +57,14 @@ void Polinom::ins(double coef, int pow) {
 					break;
 				}
 				else if (temp->pow == pow) {
-					temp->coef = 2 * temp->coef;
+					temp->coef = temp->coef + coef;
 					break;
 				}
 				temp = temp->next;
 			}
 			if (f) {
 				if (temp->pow == pow) {
-					temp->coef = 2 * temp->coef;
+					temp->coef = temp->coef + coef;
 				}
 				else if (temp->pow > pow) {
 					temp->next = ins;
