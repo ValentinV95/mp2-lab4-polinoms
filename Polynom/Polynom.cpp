@@ -1,4 +1,4 @@
-// реализация функций и классов для вычисления арифметических выражений
+п»ї// СЂРµР°Р»РёР·Р°С†РёСЏ С„СѓРЅРєС†РёР№ Рё РєР»Р°СЃСЃРѕРІ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРёС… РІС‹СЂР°Р¶РµРЅРёР№
 #include "Polynom.h"
 #include<string>
 #include <cstdio>
@@ -20,8 +20,12 @@ Polynom::Polynom() {
 }
 Polynom::Polynom(struct m * a, int N) :Polynom() {
 
-	for (int i = 0; i < N; i++)
-		Insert(a[i].c, a[i].d);
+	for (int i = 0; i < N; i++) {
+		if ((a[i].d < 0) || (a[i].d > 999))
+			throw("The wrong monomial degree");
+		else
+			Insert(a[i].c, a[i].d);
+	}
 }
 Polynom::Polynom(Polynom &A) : Polynom() {
 	Monom*temp = A.Fhead->Next;
@@ -85,28 +89,31 @@ void Polynom::Insert(double _coef, int _deg) {
 	}
 }
 void Polynom::Delete(int _deg) {
-	Monom*temp = Fhead->Next;
-	if (temp == NULL)
-		return;
+	if ((_deg < 0) || (_deg > 999))
+		throw("The wrong monomial degree");
 	else {
-		while ((temp->Next != NULL) && (temp->deg != _deg)) {
-			temp = temp->Next;
-		}
-		if (temp->deg == _deg) {
-
-			if (temp->Next != NULL) {
-				temp->Prev->Next = temp->Next;
-				temp->Next->Prev = temp->Prev;
-				delete temp;
+		Monom*temp = Fhead->Next;
+		if (temp == NULL)
+			return;
+		else {
+			while ((temp->Next != NULL) && (temp->deg != _deg)) {
+				temp = temp->Next;
 			}
-			else {
-				temp->Prev->Next = NULL;
-				delete temp;
-			}
+			if (temp->deg == _deg) {
 
+				if (temp->Next != NULL) {
+					temp->Prev->Next = temp->Next;
+					temp->Next->Prev = temp->Prev;
+					delete temp;
+				}
+				else {
+					temp->Prev->Next = NULL;
+					delete temp;
+				}
+
+			}
 		}
 	}
-
 }
 
 bool Polynom::IsEmpty() {//1-Empty
