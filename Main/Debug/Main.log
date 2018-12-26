@@ -1,0 +1,4 @@
+﻿  TPolinom.cpp
+c:\poli\mp2-lab4-polinoms\main\tpolinom.cpp(254): warning C4101: 'i': unreferenced local variable
+  Main.vcxproj -> C:\poli\mp2-lab4-polinoms\Main\Debug\Main.exe
+  Main.vcxproj -> C:\poli\mp2-lab4-polinoms\Main\Debug\Main.pdb (Full PDB)
