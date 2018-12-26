@@ -1,28 +1,28 @@
-#include "../include/polynomial.h"
+п»ї#include "../include/polynomial.h"
 #include "../include/utils.h"
 #include <cmath>
 #include <sstream>
 
-// Упорядочивание многочлена
+// РЈРїРѕСЂСЏРґРѕС‡РёРІР°РЅРёРµ РјРЅРѕРіРѕС‡Р»РµРЅР°
 void Polynomial::arrange()
 {
 	monomials->sort();
 }
 
-// Приведение подобных слагаемых
+// РџСЂРёРІРµРґРµРЅРёРµ РїРѕРґРѕР±РЅС‹С… СЃР»Р°РіР°РµРјС‹С…
 void Polynomial::combineLikeTerms()
 {
-	arrange(); // Упорядочивание
-	Node<Monomial> *a = monomials->getHead(); // Получение головы
-	if (a != nullptr) // Если она не пуста
-		while (a->next != nullptr) // Пока не пуст следующий
+	arrange(); // РЈРїРѕСЂСЏРґРѕС‡РёРІР°РЅРёРµ
+	Node<Monomial> *a = monomials->getHead(); // РџРѕР»СѓС‡РµРЅРёРµ РіРѕР»РѕРІС‹
+	if (a != nullptr) // Р•СЃР»Рё РѕРЅР° РЅРµ РїСѓСЃС‚Р°
+		while (a->next != nullptr) // РџРѕРєР° РЅРµ РїСѓСЃС‚ СЃР»РµРґСѓСЋС‰РёР№
 		{
 			Node<Monomial> *b = a->next;
-			if (a->data.getPow() == b->data.getPow()) // Если степени соседей равны
+			if (a->data.getPow() == b->data.getPow()) // Р•СЃР»Рё СЃС‚РµРїРµРЅРё СЃРѕСЃРµРґРµР№ СЂР°РІРЅС‹
 			{
-				// Коэффициент 1го - сумма коэффициентов
+				// РљРѕСЌС„С„РёС†РёРµРЅС‚ 1РіРѕ - СЃСѓРјРјР° РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ
 				a->data.setCoeff(a->data.getCoeff() + b->data.getCoeff());
-				// Удаление 2го (с проверкой, не является ли концом)
+				// РЈРґР°Р»РµРЅРёРµ 2РіРѕ (СЃ РїСЂРѕРІРµСЂРєРѕР№, РЅРµ СЏРІР»СЏРµС‚СЃСЏ Р»Рё РєРѕРЅС†РѕРј)
 				if (b == this->getMonomials()->getTail())
 				{
 					b = b->prev;
@@ -38,12 +38,12 @@ void Polynomial::combineLikeTerms()
 		}
 
 	a = monomials->getHead();
-	// Удаление возникших нулей (если есть только ноль, то не удаляется)
+	// РЈРґР°Р»РµРЅРёРµ РІРѕР·РЅРёРєС€РёС… РЅСѓР»РµР№ (РµСЃР»Рё РµСЃС‚СЊ С‚РѕР»СЊРєРѕ РЅРѕР»СЊ, С‚Рѕ РЅРµ СѓРґР°Р»СЏРµС‚СЃСЏ)
 	while (a != nullptr)
 	{
 		if (a->data.getCoeff() == 0)
 		{
-			// Если голова
+			// Р•СЃР»Рё РіРѕР»РѕРІР°
 			if (a == this->getMonomials()->getHead())
 			{
 				if (a->next == nullptr)
@@ -51,13 +51,13 @@ void Polynomial::combineLikeTerms()
 				a = a->next;
 				a->prev = nullptr;
 			}
-			// Если хвост
+			// Р•СЃР»Рё С…РІРѕСЃС‚
 			else if (a == this->getMonomials()->getTail())
 			{
 				a = a->prev;
 				a->next = nullptr;
 			}
-			// Иначе
+			// РРЅР°С‡Рµ
 			else
 			{
 				a->prev->next = a->next;
@@ -68,19 +68,19 @@ void Polynomial::combineLikeTerms()
 	}
 }
 
-// Конструктор по умолчанию
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Polynomial::Polynomial()
 {
 	monomials = new List<Monomial>();
 }
 
-// Конструктор (параметр - список мономов)
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ (РїР°СЂР°РјРµС‚СЂ - СЃРїРёСЃРѕРє РјРѕРЅРѕРјРѕРІ)
 Polynomial::Polynomial(const List<Monomial>& monomials)
 {
 	this->monomials = new List<Monomial>(monomials);
 }
 
-// Конструктор (параметр - строка)
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ (РїР°СЂР°РјРµС‚СЂ - СЃС‚СЂРѕРєР°)
 Polynomial::Polynomial(std::string s)
 {
 	monomials = new List<Monomial>();
@@ -101,89 +101,89 @@ Polynomial::Polynomial(std::string s)
 	combineLikeTerms();
 }
 
-// Получение списка мономов
+// РџРѕР»СѓС‡РµРЅРёРµ СЃРїРёСЃРєР° РјРѕРЅРѕРјРѕРІ
 List<Monomial>* Polynomial::getMonomials() const
 {
 	return monomials;
 }
 
-// Добавление одночлена
+// Р”РѕР±Р°РІР»РµРЅРёРµ РѕРґРЅРѕС‡Р»РµРЅР°
 void Polynomial::addMonomial(const Monomial& m)
 {
 	monomials->push_back(m);
 }
 
-// Перегрузка оператора +
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° +
 Polynomial operator+(const Polynomial& p1, const Polynomial& p2)
 {
-	// Получение первых элементов многочленов
+	// РџРѕР»СѓС‡РµРЅРёРµ РїРµСЂРІС‹С… СЌР»РµРјРµРЅС‚РѕРІ РјРЅРѕРіРѕС‡Р»РµРЅРѕРІ
 	Node<Monomial> *a = p1.getMonomials()->getHead(),
 		*b = p2.getMonomials()->getHead();
 	Polynomial c;
 
-	// Пока оба не закончились
+	// РџРѕРєР° РѕР±Р° РЅРµ Р·Р°РєРѕРЅС‡РёР»РёСЃСЊ
 	while (a != nullptr && b != nullptr)
 	{
-		if (a->data > b->data) // Если степень 1го монома больше
+		if (a->data > b->data) // Р•СЃР»Рё СЃС‚РµРїРµРЅСЊ 1РіРѕ РјРѕРЅРѕРјР° Р±РѕР»СЊС€Рµ
 		{
-			c.addMonomial(a->data); // Запись 1го монома
-			a = a->next; // Движение по 1му многочлену
+			c.addMonomial(a->data); // Р—Р°РїРёСЃСЊ 1РіРѕ РјРѕРЅРѕРјР°
+			a = a->next; // Р”РІРёР¶РµРЅРёРµ РїРѕ 1РјСѓ РјРЅРѕРіРѕС‡Р»РµРЅСѓ
 		}
-		else if (a->data < b->data) // Если степень 2го монома больше
+		else if (a->data < b->data) // Р•СЃР»Рё СЃС‚РµРїРµРЅСЊ 2РіРѕ РјРѕРЅРѕРјР° Р±РѕР»СЊС€Рµ
 		{
-			c.addMonomial(b->data); // Запись 2го монома
-			b = b->next; // Движение по 2му многочлену
+			c.addMonomial(b->data); // Р—Р°РїРёСЃСЊ 2РіРѕ РјРѕРЅРѕРјР°
+			b = b->next; // Р”РІРёР¶РµРЅРёРµ РїРѕ 2РјСѓ РјРЅРѕРіРѕС‡Р»РµРЅСѓ
 		}
-		else // Если равны
+		else // Р•СЃР»Рё СЂР°РІРЅС‹
 		{
 			double cCoeff = a->data.getCoeff() + b->data.getCoeff();
-			if (cCoeff != 0) // Если новый коэффициент не ноль
-				c.addMonomial(Monomial(cCoeff, a->data.getPow())); // Добавляем моном
-			a = a->next; // Движение по обоим многочленам
+			if (cCoeff != 0) // Р•СЃР»Рё РЅРѕРІС‹Р№ РєРѕСЌС„С„РёС†РёРµРЅС‚ РЅРµ РЅРѕР»СЊ
+				c.addMonomial(Monomial(cCoeff, a->data.getPow())); // Р”РѕР±Р°РІР»СЏРµРј РјРѕРЅРѕРј
+			a = a->next; // Р”РІРёР¶РµРЅРёРµ РїРѕ РѕР±РѕРёРј РјРЅРѕРіРѕС‡Р»РµРЅР°Рј
 			b = b->next;
 		}
 	}
 
-	while (a != nullptr) // Добавление непрочитанных мономов из 1го многочлена
+	while (a != nullptr) // Р”РѕР±Р°РІР»РµРЅРёРµ РЅРµРїСЂРѕС‡РёС‚Р°РЅРЅС‹С… РјРѕРЅРѕРјРѕРІ РёР· 1РіРѕ РјРЅРѕРіРѕС‡Р»РµРЅР°
 	{
 		c.addMonomial(a->data);
 		a = a->next;
 	}
 
-	while (b != nullptr) // Добавление непрочитанных мономов из 2го многочлена
+	while (b != nullptr) // Р”РѕР±Р°РІР»РµРЅРёРµ РЅРµРїСЂРѕС‡РёС‚Р°РЅРЅС‹С… РјРѕРЅРѕРјРѕРІ РёР· 2РіРѕ РјРЅРѕРіРѕС‡Р»РµРЅР°
 	{
 		c.addMonomial(b->data);
 		b = b->next;
 	}
 
-	c.combineLikeTerms(); // Приведение подобных
+	c.combineLikeTerms(); // РџСЂРёРІРµРґРµРЅРёРµ РїРѕРґРѕР±РЅС‹С…
 	return c;
 }
 
-// Перегрузка оператора -
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° -
 Polynomial operator-(const Polynomial& p1, const Polynomial& p2)
 {
 	Polynomial p3 = p2 * -1.0,
 		p4 = p1 + p3;
-	p4.combineLikeTerms(); // Приведение подобных
+	p4.combineLikeTerms(); // РџСЂРёРІРµРґРµРЅРёРµ РїРѕРґРѕР±РЅС‹С…
 	return p4;
 }
 
-// Перегрузка оператора *
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° *
 Polynomial operator*(const Polynomial& p1, const Polynomial& p2)
 {
 	Node<Monomial> *a = p1.getMonomials()->getHead();
 	Polynomial c;
 
-	while (a != nullptr) // Пока не прочитан 1й многочлен
+	while (a != nullptr) // РџРѕРєР° РЅРµ РїСЂРѕС‡РёС‚Р°РЅ 1Р№ РјРЅРѕРіРѕС‡Р»РµРЅ
 	{
 		Node<Monomial> *b = p2.getMonomials()->getHead(); 
-		while (b != nullptr) // Пока не прочитан 1й многочлен
+		while (b != nullptr) // РџРѕРєР° РЅРµ РїСЂРѕС‡РёС‚Р°РЅ 1Р№ РјРЅРѕРіРѕС‡Р»РµРЅ
 		{
-			// Если переполнение, то исключение
+			// Р•СЃР»Рё РїРµСЂРµРїРѕР»РЅРµРЅРёРµ, С‚Рѕ РёСЃРєР»СЋС‡РµРЅРёРµ
 			if (!isMultiplicative(a->data.getPow(), b->data.getPow()))
-				throw std::overflow_error("Произошло переполнение!");
-			// Перемножение коэффицентов и суммирование показателей
+				throw std::overflow_error("РџСЂРѕРёР·РѕС€Р»Рѕ РїРµСЂРµРїРѕР»РЅРµРЅРёРµ!");
+			// РџРµСЂРµРјРЅРѕР¶РµРЅРёРµ РєРѕСЌС„С„РёС†РµРЅС‚РѕРІ Рё СЃСѓРјРјРёСЂРѕРІР°РЅРёРµ РїРѕРєР°Р·Р°С‚РµР»РµР№
 			c.addMonomial(Monomial(a->data.getCoeff() * b->data.getCoeff(),
 				a->data.getPow() + b->data.getPow()));
 			b = b->next;
@@ -195,56 +195,56 @@ Polynomial operator*(const Polynomial& p1, const Polynomial& p2)
 	return c;
 }
 
-// Перегрузка оператора *
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° *
 Polynomial operator*(const Polynomial& p, double c)
 {
 	Node<Monomial> *a = p.getMonomials()->getHead();
 	Polynomial b;
 	if (c != 0)
 	{
-		while (a != nullptr) // Пока не прочитан многочлен
+		while (a != nullptr) // РџРѕРєР° РЅРµ РїСЂРѕС‡РёС‚Р°РЅ РјРЅРѕРіРѕС‡Р»РµРЅ
 		{
 			b.addMonomial(Monomial(a->data.getCoeff() * c,
-				a->data.getPow())); // Умножение коэффициента
+				a->data.getPow())); // РЈРјРЅРѕР¶РµРЅРёРµ РєРѕСЌС„С„РёС†РёРµРЅС‚Р°
 			a = a->next;
 		}
-		b.combineLikeTerms(); // Приведение подобных
+		b.combineLikeTerms(); // РџСЂРёРІРµРґРµРЅРёРµ РїРѕРґРѕР±РЅС‹С…
 		return b;
 	}
 	else
 		return Polynomial();
 }
 
-// Перегрузка оператора *
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° *
 Polynomial operator*(double c, const Polynomial& p)
 {
 	return p * c;
 }
 
-// Перегрузка оператора потокового вывода
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РїРѕС‚РѕРєРѕРІРѕРіРѕ РІС‹РІРѕРґР°
 std::ostream& operator<<(std::ostream& os, const Polynomial& p)
 {
 	Node<Monomial>* i = p.getMonomials()->getHead();
-	if (i != nullptr) // Пока текущий элемент не конец списка
-		while (i->next != nullptr) // Пока следующий элемент не конец списка
+	if (i != nullptr) // РџРѕРєР° С‚РµРєСѓС‰РёР№ СЌР»РµРјРµРЅС‚ РЅРµ РєРѕРЅРµС† СЃРїРёСЃРєР°
+		while (i->next != nullptr) // РџРѕРєР° СЃР»РµРґСѓСЋС‰РёР№ СЌР»РµРјРµРЅС‚ РЅРµ РєРѕРЅРµС† СЃРїРёСЃРєР°
 		{
-			os << i->data << " + "; // Записываем моном, разделяем +
+			os << i->data << " + "; // Р—Р°РїРёСЃС‹РІР°РµРј РјРѕРЅРѕРј, СЂР°Р·РґРµР»СЏРµРј +
 			i = i->next;
 		}
 	else 
-		os << 0; // Случай пустого многочлена
-	if (i != nullptr) // Записываем моном хвоста
+		os << 0; // РЎР»СѓС‡Р°Р№ РїСѓСЃС‚РѕРіРѕ РјРЅРѕРіРѕС‡Р»РµРЅР°
+	if (i != nullptr) // Р—Р°РїРёСЃС‹РІР°РµРј РјРѕРЅРѕРј С…РІРѕСЃС‚Р°
 		os << i->data;
 	return os;
 }
 
-// Текстовое представление многочлена
+// РўРµРєСЃС‚РѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РјРЅРѕРіРѕС‡Р»РµРЅР°
 std::string Polynomial::to_string()
 {
-	// Запись в строковый поток
+	// Р—Р°РїРёСЃСЊ РІ СЃС‚СЂРѕРєРѕРІС‹Р№ РїРѕС‚РѕРє
 	std::string result;
 	std::stringstream stream(result);
 	stream << *this;
-	// Получение строки из потока
+	// РџРѕР»СѓС‡РµРЅРёРµ СЃС‚СЂРѕРєРё РёР· РїРѕС‚РѕРєР°
 	return stream.str();
 }

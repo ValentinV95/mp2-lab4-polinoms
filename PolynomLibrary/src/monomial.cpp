@@ -1,79 +1,79 @@
-#include "../include/monomial.h"
+п»ї#include "../include/monomial.h"
 #include <sstream>
 #include <string>
 
-// Конструктор по умолчанию
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 Monomial::Monomial()
 {
 
 }
 
-// Конструктор с параметрами
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Monomial::Monomial(double coeff, int pow)
 {
 	this->coeff = coeff;
 	this->pow = pow;
 }
 
-// Получение коэффициента
+// РџРѕР»СѓС‡РµРЅРёРµ РєРѕСЌС„С„РёС†РёРµРЅС‚Р°
 double Monomial::getCoeff() const
 {
 	return this->coeff;
 }
 
-// Получение степени
+// РџРѕР»СѓС‡РµРЅРёРµ СЃС‚РµРїРµРЅРё
 int Monomial::getPow() const
 {
 	return this->pow;
 }
 
-// Изменение коэффициента
+// РР·РјРµРЅРµРЅРёРµ РєРѕСЌС„С„РёС†РёРµРЅС‚Р°
 void Monomial::setCoeff(double coeff)
 {
 	this->coeff = coeff;
 }
 
-// Изменение степени
+// РР·РјРµРЅРµРЅРёРµ СЃС‚РµРїРµРЅРё
 void Monomial::setPow(int pow)
 {
 	this->pow = pow;
 }
 
-// Перегрузка оператора <
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° <
 bool operator<(const Monomial& m1, const Monomial& m2)
 {
 	return m1.pow < m2.pow;
 }
 
-// Перегрузка оператора >
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° >
 bool operator>(const Monomial& m1, const Monomial& m2)
 {
 	return m1.pow > m2.pow;
 }
 
-// Перегрузка оператора ==
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° ==
 bool operator==(const Monomial& m1, const Monomial& m2)
 {
 	return m1.pow == m2.pow;
 }
 
-// Перегрузка оператора потокового вывода
+// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РїРѕС‚РѕРєРѕРІРѕРіРѕ РІС‹РІРѕРґР°
 std::ostream& operator<<(std::ostream& os, const Monomial& m)
 {
-	// Вывод коэффициента (если все степени нулевые, выводится только коэффициент)
+	// Р’С‹РІРѕРґ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° (РµСЃР»Рё РІСЃРµ СЃС‚РµРїРµРЅРё РЅСѓР»РµРІС‹Рµ, РІС‹РІРѕРґРёС‚СЃСЏ С‚РѕР»СЊРєРѕ РєРѕСЌС„С„РёС†РёРµРЅС‚)
 	os << m.getCoeff();
 
 	if (m.getPow() != 0)
 	{
 		os << " * ";
 
-		// Получение степеней x, y, z
+		// РџРѕР»СѓС‡РµРЅРёРµ СЃС‚РµРїРµРЅРµР№ x, y, z
 		int pow = m.getPow();
 		int x = pow / 100;
 		int y = (pow / 10) % 10;
 		int z = pow % 10;
 
-		// Вывод степеней x, y, z (опциально ставятся знаки умножения)
+		// Р’С‹РІРѕРґ СЃС‚РµРїРµРЅРµР№ x, y, z (РѕРїС†РёР°Р»СЊРЅРѕ СЃС‚Р°РІСЏС‚СЃСЏ Р·РЅР°РєРё СѓРјРЅРѕР¶РµРЅРёСЏ)
 		if (x == 1)
 			os << "x";
 		else if (x > 1)

@@ -1,34 +1,34 @@
-#ifndef MONOMIAL_H
+п»ї#ifndef MONOMIAL_H
 #define MONOMIAL_H
 
 #include <string>
 
-// Класс "одночлен"
+// РљР»Р°СЃСЃ "РѕРґРЅРѕС‡Р»РµРЅ"
 class Monomial
 {
-	double coeff; // Коэффициент
-	int pow; // Показатели x, y, z
+	double coeff; // РљРѕСЌС„С„РёС†РёРµРЅС‚
+	int pow; // РџРѕРєР°Р·Р°С‚РµР»Рё x, y, z
 
 public:
-	// Конструктор по умолчанию
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	Monomial();
-	// Конструктор с параметрами
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	Monomial(double coeff, int pow);
 	
-	// Получение коэффициента
+	// РџРѕР»СѓС‡РµРЅРёРµ РєРѕСЌС„С„РёС†РёРµРЅС‚Р°
 	double getCoeff() const;
-	// Получение степени
+	// РџРѕР»СѓС‡РµРЅРёРµ СЃС‚РµРїРµРЅРё
 	int getPow() const;
-	// Изменение коэффициента
+	// РР·РјРµРЅРµРЅРёРµ РєРѕСЌС„С„РёС†РёРµРЅС‚Р°
 	void setCoeff(double coeff);
-	// Изменение степени
+	// РР·РјРµРЅРµРЅРёРµ СЃС‚РµРїРµРЅРё
 	void setPow(int pow);
 
-	// Перегрузка операторов сравнения <, >, =
+	// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂРѕРІ СЃСЂР°РІРЅРµРЅРёСЏ <, >, =
 	friend bool operator<(const Monomial& m1, const Monomial& m2);
 	friend bool operator>(const Monomial& m1, const Monomial& m2);
 	friend bool operator==(const Monomial& m1, const Monomial& m2);
-	// Перегрузка оператора потокового вывода
+	// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РїРѕС‚РѕРєРѕРІРѕРіРѕ РІС‹РІРѕРґР°
 	friend std::ostream& operator<<(std::ostream& os, const Monomial& m);
 };
 

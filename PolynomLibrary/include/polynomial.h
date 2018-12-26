@@ -1,44 +1,44 @@
-#ifndef POLYNOMIAL_H
+п»ї#ifndef POLYNOMIAL_H
 #define POLYNOMIAL_H
 
 #include "list.h"
 #include "monomial.h"
 #include <string>
 
-// Класс "многочлен"
+// РљР»Р°СЃСЃ "РјРЅРѕРіРѕС‡Р»РµРЅ"
 class Polynomial
 {
-	// Список одночленов
+	// РЎРїРёСЃРѕРє РѕРґРЅРѕС‡Р»РµРЅРѕРІ
 	List<Monomial>* monomials;
 
-	// Упорядочивание многочлена
+	// РЈРїРѕСЂСЏРґРѕС‡РёРІР°РЅРёРµ РјРЅРѕРіРѕС‡Р»РµРЅР°
 	void arrange();
-	// Приведение подобных слагаемых
+	// РџСЂРёРІРµРґРµРЅРёРµ РїРѕРґРѕР±РЅС‹С… СЃР»Р°РіР°РµРјС‹С…
 	void combineLikeTerms();
 
 public:
-	// Конструктор по умолчанию
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	Polynomial();
-	// Конструктор (параметр - список мономов)
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ (РїР°СЂР°РјРµС‚СЂ - СЃРїРёСЃРѕРє РјРѕРЅРѕРјРѕРІ)
 	Polynomial(const List<Monomial>& monomials);
-	// Конструктор (параметр - строка)
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ (РїР°СЂР°РјРµС‚СЂ - СЃС‚СЂРѕРєР°)
 	Polynomial(std::string s);
 	
-	// Получение списка мономов
+	// РџРѕР»СѓС‡РµРЅРёРµ СЃРїРёСЃРєР° РјРѕРЅРѕРјРѕРІ
 	List<Monomial>* getMonomials() const;
-	// Добавление одночлена
+	// Р”РѕР±Р°РІР»РµРЅРёРµ РѕРґРЅРѕС‡Р»РµРЅР°
 	void addMonomial(const Monomial& m);
 	
-	// Перегрузка арифметических операторов
+	// РџРµСЂРµРіСЂСѓР·РєР° Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРёС… РѕРїРµСЂР°С‚РѕСЂРѕРІ
 	friend Polynomial operator+(const Polynomial& p1, const Polynomial& p2);
 	friend Polynomial operator-(const Polynomial& p1, const Polynomial& p2);
 	friend Polynomial operator*(const Polynomial& p1, const Polynomial& p2);
 	friend Polynomial operator*(const Polynomial& p, double c);
 	friend Polynomial operator*(double c, const Polynomial& p);
-	// Перегрузка оператора потокового вывода
+	// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° РїРѕС‚РѕРєРѕРІРѕРіРѕ РІС‹РІРѕРґР°
 	friend std::ostream& operator<<(std::ostream& os, const Polynomial& p);
 
-	// Текстовое представление многочлена
+	// РўРµРєСЃС‚РѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РјРЅРѕРіРѕС‡Р»РµРЅР°
 	std::string to_string();
 };
 
