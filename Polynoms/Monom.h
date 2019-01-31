@@ -1,41 +1,41 @@
-#pragma once
+п»ї#pragma once
 #include "stdafx.h"
 #include <iostream>
 using namespace std;
 class Monom;
-typedef Monom* Link; //указатель на моном
+typedef Monom* Link; //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РјРѕРЅРѕРј
 class Monom {
-	int power; //степень
-	int cf;    //коэффициент 
-	Link pointer;   //указатель на след.моном
+	int power; //СЃС‚РµРїРµРЅСЊ
+	int cf;    //РєРѕСЌС„С„РёС†РёРµРЅС‚ 
+	Link pointer;   //СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЃР»РµРґ.РјРѕРЅРѕРј
 public:
-	Monom(int _power = 0, int _cf = 0, Link _pointer = NULL) // конструктор инициализации
+	Monom(int _power = 0, int _cf = 0, Link _pointer = NULL) // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё
 	{
 		power = _power;
 		cf = _cf;
 		pointer = _pointer;
 	}
-	void SetPower(int _power)//установка степени
+	void SetPower(int _power)//СѓСЃС‚Р°РЅРѕРІРєР° СЃС‚РµРїРµРЅРё
 	{
 		power = _power;
 	}
-	void SetCf(int _cf) //установка коэф
+	void SetCf(int _cf) //СѓСЃС‚Р°РЅРѕРІРєР° РєРѕСЌС„
 	{
 		cf = _cf;
 	}
-	void SetPointer(Link _pointer) //установка указателя
+	void SetPointer(Link _pointer) //СѓСЃС‚Р°РЅРѕРІРєР° СѓРєР°Р·Р°С‚РµР»СЏ
 	{
 		pointer = _pointer;
 	}
-	int GetPower(void) const //получить степень 
+	int GetPower(void) const //РїРѕР»СѓС‡РёС‚СЊ СЃС‚РµРїРµРЅСЊ 
 	{
 		return power;
 	}
-	int GetCf(void) const //получить коэф
+	int GetCf(void) const //РїРѕР»СѓС‡РёС‚СЊ РєРѕСЌС„
 	{
 		return cf;
 	}
-	Monom* GetPointer(void) const  // получить след моном 
+	Monom* GetPointer(void) const  // РїРѕР»СѓС‡РёС‚СЊ СЃР»РµРґ РјРѕРЅРѕРј 
 	{
 		return pointer;
 	}

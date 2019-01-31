@@ -1,4 +1,4 @@
-#include "Polynoms.h"
+п»ї#include "Polynoms.h"
 #include <iostream>
 using namespace std;
 int main() {
@@ -13,12 +13,12 @@ int main() {
 	cin >> t;
 	Polynom B(t);
 	Polynom C;
-	//сумма
+	//СЃСѓРјРјР°
 	cout << "A+B=" << endl;
 	C = A + B;
 	C.Print();
 	cout << endl;
-	//////вычитание
+	//////РІС‹С‡РёС‚Р°РЅРёРµ
 	cout << "A-B=" << endl;
 	C = A - B;
 	C.Print();
@@ -27,7 +27,7 @@ int main() {
 	C = B - A;
 	C.Print();
 	cout << endl;
-	////умножение 
+	////СѓРјРЅРѕР¶РµРЅРёРµ 
 	cout << "A*B=" << endl;
 	C = A*B;
 	C.Print();

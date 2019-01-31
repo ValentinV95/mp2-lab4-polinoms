@@ -1,4 +1,4 @@
-#include "gtest.h"
+﻿#include "gtest.h"
 #include "Polynoms.h"
 #include<string>
 
