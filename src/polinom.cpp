@@ -1,4 +1,5 @@
 ﻿#include "polinom.h"
+#include "cmath"
 
 Monom::Monom()
 {
@@ -79,10 +80,11 @@ void Polinom::ToStandartView()
 {
 	Node<Monom>* cur = head;
 	Node<Monom>* temp;
+	double eps = 0.00000000001;
 
 	while (cur != NULL)
 	{
-		if (cur->data.coef == 0.0)
+		if (abs(cur->data.coef) <  eps)
 		{
 			temp = cur->next;
 			Delete(cur);
@@ -157,8 +159,9 @@ Polinom Polinom::operator* (Monom& mon)
 	Node<Monom>* last;
 	Node<Monom> fk_head;
 	last = &fk_head;
+	double eps = 0.00000000001;
 
-	if (mon.coef == 0.0)
+	if (abs(mon.coef) < eps)
 		return(res);
 
 	while (cur != NULL)
@@ -168,7 +171,7 @@ Polinom Polinom::operator* (Monom& mon)
 		temp->data.deg = mon.deg + cur->data.deg;
 
 		if (temp->data.RetSum() != (mon.RetSum() + cur->data.RetSum()))
-			throw "Error: degree of x/y/z more than 9"; //данные в куче остаются?
+			throw "Error: degree of x/y/z more than 9";
 
 		temp->prev = last;
 		last->next = temp;
