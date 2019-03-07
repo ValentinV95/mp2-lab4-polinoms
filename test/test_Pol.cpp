@@ -2,10 +2,11 @@
 
 #include <gtest.h>
 #include "pol.h"
+using namespace std;
 TEST(List, can_insert_begin_with_correct_power)
 {
 	List a;
-	a.Insert_begin(3154,12);
+	a.Insert_begin(3154, 12);
 	EXPECT_EQ(a.head->p, 3154);
 
 }
@@ -14,12 +15,14 @@ TEST(List, can_insert_begin_with_correct_coef)
 	List a;
 	a.Insert_begin(3154, 12);
 	EXPECT_EQ(a.head->c, 12);
+
 }
 TEST(List, can_insert_end_with_correct_power)
 {
 	List a;
 	a.Insert_end(3154, 12);
 	EXPECT_EQ(a.tail->p, 3154);
+
 }
 TEST(List, can_insert_end_with_correct_coef)
 {
@@ -78,7 +81,7 @@ TEST(pol, can_create_pol_2)
 }
 TEST(pol, can_create_pol_3)
 {
-	pol b(123,14);
+	pol b(123, 14);
 	EXPECT_EQ(b.a.head->c, 14);
 }
 TEST(pol, Mull_double_1)
@@ -88,7 +91,7 @@ TEST(pol, Mull_double_1)
 	a.Insert_begin(124, 13);
 	pol b;
 	pol b1(a);
-	b=b1.Mull(2);
+	b = b1.Mull(2);
 	EXPECT_EQ(b.a.head->c, 26);
 }
 TEST(pol, Mull_double_2)
@@ -98,7 +101,7 @@ TEST(pol, Mull_double_2)
 	a.Insert_begin(124, 13);
 	pol b;
 	pol b1(a);
-	b=b1.Mull(2);
+	b = b1.Mull(2);
 	EXPECT_EQ(b.a.tail->c, 24);
 }
 TEST(pol, Mull_double_3)
@@ -109,7 +112,7 @@ TEST(pol, Mull_double_3)
 	a.Insert_begin(124, 13);
 	pol b;
 	pol b1(a);
-	b=b1.Mull(2);
+	b = b1.Mull(2);
 	EXPECT_EQ(b.a.head->next->c, 30);
 }
 TEST(pol, Mull_double_4)
@@ -120,7 +123,7 @@ TEST(pol, Mull_double_4)
 	a.Insert_begin(124, 13);
 	pol b1(a);
 	pol b;
-	b=b1.Mull(-1);
+	b = b1.Mull(-1);
 	EXPECT_EQ(b.a.head->next->c, -15);
 }
 TEST(pol, DelZero_correct_n)
@@ -213,7 +216,7 @@ TEST(pol, add_1)
 	pol b2(b);
 	pol b3;
 	b3 = b1 + b2;
-	EXPECT_EQ(b3.a.tail->p,123);	
+	EXPECT_EQ(b3.a.tail->p, 123);
 }
 TEST(pol, add_2)
 {
@@ -342,15 +345,15 @@ TEST(pol, mul_pol_2)
 	pol b2(b);
 	pol b3;
 	b3 = b1 * b2;
-	EXPECT_EQ(b3.a.head->next->c, 10);
+	EXPECT_EQ(b3.a.head->next->c, 6);
 }
 TEST(pol, mul_pol_3)
 {
 	List a;
 	List b;
-	a.Insert_begin(120, 4);
+	a.Insert_begin(124, 4);
 	a.Insert_begin(121, 2);
-	b.Insert_begin(121, 3);
+	b.Insert_begin(125, 3);
 	b.Insert_begin(120, 5);
 	b.Insert_begin(123, 6);
 	pol b1(a);
@@ -369,7 +372,7 @@ TEST(pol, mul_pol_4)
 	pol b2(b);
 	pol b3;
 	b3 = b1 * b2;
-	EXPECT_EQ(NULL,b3.a.head);
+	EXPECT_EQ(NULL, b3.a.head);
 }
 TEST(pol, mul_pol_5)
 {
@@ -384,7 +387,7 @@ TEST(pol, mul_pol_5)
 	pol b2(b);
 	pol b3;
 	b3 = b1 * b2;
-	EXPECT_EQ(12,b3.a.tail->c);
+	EXPECT_EQ(12, b3.a.tail->c);
 }
 TEST(pol, mul_pol_6)
 {
@@ -410,5 +413,15 @@ TEST(pol, mul_pol_7)
 	pol b2(b);
 	pol b3;
 	b3 = b1 * b2;
-	EXPECT_EQ(6, b3.a.n);
+	EXPECT_EQ(5, b3.a.n);
+}
+TEST(pol, deldups_1)
+{
+	List a;
+	a.Insert_end(112, 2);
+	a.Insert_end(112, 3);
+	a.Insert_end(112, 3);
+	pol b1(a);
+	b1.DelDups();
+	EXPECT_EQ(b1.a.head->c, 8);
 }
