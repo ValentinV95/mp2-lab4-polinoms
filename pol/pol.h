@@ -10,24 +10,26 @@ struct monom {
 	void zapoln(double coeff, int pow) {
 		a = coeff;
 		s = pow;
+		next = NULL;
 	}
-
 };
 class pol {
 	monom *head;
 	unsigned int size;
 public:
 	pol();
+	/*~pol();*/
+
 	void insert(monom m);
 	void show();
 
-	pol& operator= (pol sec);
+	pol& operator= (pol &sec);
 
-	pol& operator+ (pol sec);
-	pol& operator- (pol sec);
-	pol& operator* (pol sec);	
+	pol operator+ (pol sec);
+	pol operator- (pol sec);
+	pol operator* (pol sec);	
 
-	pol& operator* (double con);
+	pol operator* (double con);
 
 	bool operator== (const pol &sec) const;
 	bool operator!= (const pol &sec) const;

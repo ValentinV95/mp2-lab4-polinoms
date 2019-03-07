@@ -52,6 +52,13 @@ TEST(pol, NE_polinoms_diff_size)
 
 	EXPECT_NE(B, A);
 }
+TEST(pol, can_mult_polinom_const)
+{
+	monom a(1, 100);
+	pol A;
+	A.insert(a);
+	ASSERT_NO_THROW(A * 9);
+}
 TEST(pol, mult_polinom_const)
 {
 	monom a(1, 100), b(9, 100);
@@ -148,7 +155,7 @@ TEST(pol, insert_monom_with_wrong_coeff)
 TEST(pol, mult_polinoms_with_large_power)
 {
 	pol A, B;
-	monom a(1, 109), b(1, 2);
+	monom a(1, 199), b(1, 30);
 
 	A.insert(a);
 	B.insert(b);
