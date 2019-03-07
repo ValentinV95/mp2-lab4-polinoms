@@ -3,6 +3,7 @@
 #define UNTITLED_LIST_H
 #include <iostream>
 using namespace std;
+double eps = 1e-15;
 struct Node
 {
 	double c;
@@ -147,7 +148,7 @@ public:
 		Node* tmp1 = tmp;
 		while (tmp1->next != NULL)
 		{
-			if (tmp1->c == 0)
+			if (tmp1->c < eps)
 				k++;
 			tmp1 = tmp1->next;
 		}
