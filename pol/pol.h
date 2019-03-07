@@ -3,7 +3,7 @@
 #define UNTITLED_LIST_H
 #include <iostream>
 using namespace std;
-double eps = 1e-15;
+double eps = 0.00000000001;
 struct Node
 {
 	double c;
@@ -44,7 +44,7 @@ public:
 		tail = c;
 
 	}
-	void Insert_begin(int val1,double val2)
+	void Insert_begin(int val1, double val2)
 	{
 		n++;
 		Node* tmp = new Node();
@@ -78,7 +78,7 @@ public:
 			c = c->next;
 		}
 		c = head;
-		while ((c != NULL)&&(c->next != NULL))
+		while ((c != NULL) && (c->next != NULL))
 			c = c->next;
 		tail = c;
 
@@ -92,7 +92,7 @@ public:
 		Node* c = head;
 		for (int i = 0; i < k; i++)
 			c = c->next;
-		std::cout << c->c <<'('<< c->p<<')';
+		std::cout << c->c << '(' << c->p << ')';
 	}
 	List operator=(List a)
 	{
@@ -112,7 +112,7 @@ public:
 	{
 		a.n = 0;
 		a.head = NULL;
-		a.tail =a.head;
+		a.tail = a.head;
 	}
 	pol(List b)
 	{
@@ -131,15 +131,36 @@ public:
 	{
 		pol b;
 		b = (*this);
-		Node* tmp=b.a.head;
+		Node* tmp = b.a.head;
 		while (tmp->next != NULL)
 		{
 			tmp->c *= k;
 			tmp = tmp->next;
 		}
 		tmp->c *= k;
+		b.DelDups();
 		b.DelZero();
 		return(b);
+	}
+	void DelDups()
+	{
+		Node* tmp = a.head;
+		Node* tmp1;
+		while (tmp->next != NULL)
+		{
+			tmp1 = tmp->next;
+			while (tmp1 != NULL)
+			{
+				if (tmp->p == tmp1->p)
+				{
+					tmp1->c += tmp->c;
+					a.Del(tmp->p);
+					break;
+				}
+				tmp1 = tmp1->next;
+			}
+			tmp = tmp->next;
+		}
 	}
 	void DelZero()
 	{
@@ -148,26 +169,26 @@ public:
 		Node* tmp1 = tmp;
 		while (tmp1->next != NULL)
 		{
-			if (tmp1->c < eps)
+			if (abs(tmp1->c) < eps)
 				k++;
 			tmp1 = tmp1->next;
 		}
-		if (tmp1->c == 0)
+		if (abs(tmp1->c) < eps)
 			k++;
-		while ((a.head!=NULL)&&(a.head->c == 0))
+		while ((a.head != NULL) && (abs(a.head->c) < eps))
 		{
 			a.head = a.head->next;
 			a.n--;
 			k--;
 		}
-		while (k!=0)
+		while (k != 0)
 		{
-			
+
 			tmp = a.head;
-		
-			while((tmp!=NULL)&& (tmp->next != NULL))
+
+			while ((tmp != NULL) && (tmp->next != NULL))
 			{
-				if (tmp->next->c == 0)
+				if (abs(tmp->next->c) < eps)
 				{
 					a.n--;
 					k--;
@@ -206,7 +227,7 @@ public:
 			tmp1 = tmp1->next;
 		}
 		tmp2 = b.a.head;
-		while (tmp2->next != NULL)
+		while ((tmp2 != NULL) && (tmp2->next != NULL))
 		{
 			if (tmp1->p == tmp2->p)
 			{
@@ -215,24 +236,26 @@ public:
 			}
 			tmp2 = tmp2->next;
 		}
-		if (tmp1->p == tmp2->p)
-		{
-			tmp1->c += tmp2->c;
-			b.a.Del(tmp2->p);
-		}
+		if (tmp2 != NULL)
+			if (tmp1->p == tmp2->p)
+			{
+				tmp1->c += tmp2->c;
+				b.a.Del(tmp2->p);
+			}
 		a.tail->next = b.a.head;
 		if (b.a.head != NULL)
 			a.tail = b.a.tail;
-		
+
 		a.n += b.a.n;
+		DelDups();
 		DelZero();
 		return(*this);
 	}
 	pol& operator*(pol b)
 	{
 		pol c;
-		Node* tmp1=a.head;
-		Node* tmp2=b.a.head;
+		Node* tmp1 = a.head;
+		Node* tmp2 = b.a.head;
 		while (tmp1->next != NULL)
 		{
 			tmp2 = b.a.head;
@@ -259,6 +282,7 @@ public:
 		if ((((tmp1->p) / 100 + (tmp2->p) / 100) > 9) || ((((tmp1->p) % 100) / 10 + ((tmp2->p) % 100) / 10) > 9) || (((tmp1->p) % 10 + (tmp2->p) % 10) > 9))
 			throw "Incorrect power";
 		c.a.Insert_end(tmp1->p + tmp2->p, tmp1->c*tmp2->c);
+		c.DelDups();
 		c.DelZero();
 		return(c);
 	}
