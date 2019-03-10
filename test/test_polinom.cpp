@@ -78,7 +78,7 @@ TEST(Polinom, can_reduce_a_polinom_to_standart_view)
     monoms[0] = a1; monoms[1] = a2;
     Polinom a(monoms, 2), expPolinom(expMonoms, 1);
 
-    a.Reduce();
+    a.CombineLikeTerms();
 
     EXPECT_EQ(expPolinom, a);
 }
@@ -94,7 +94,7 @@ TEST(Polinom, polinom_does_not_contain_zero_monom_after_reduce)
     expMonoms[0] = a1; expMonoms[1] = a3;
     Polinom a(monoms, 3), expPolinom(expMonoms, 2);
 
-    a.Reduce();
+    a.CombineLikeTerms();
 
     EXPECT_EQ(expPolinom, a);
 }

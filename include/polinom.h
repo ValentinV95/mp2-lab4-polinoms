@@ -11,10 +11,10 @@ using namespace std;
 class Polinom : public TList<Monom>
 {
     public:
-        Polinom(Monom* monoms = nullptr, int km = 0);  // monoms - массив мономов 
+        Polinom(Monom* monoms = nullptr, int km = 0);  // monoms - массив мономов
                                              // km - количество мономов в полиноме
-        
-        void Reduce();     // привести подобные и убрать нулевые 
+
+        void CombineLikeTerms();     // привести подобные и убрать нулевые
         void Insert(const Monom& q);   // вставить на нужное место и привести подобные
 
         bool operator == (const Polinom& q) const;
@@ -22,10 +22,10 @@ class Polinom : public TList<Monom>
         const Polinom& operator = (const Polinom& q);
         const Polinom operator + (const Polinom& q) const;
         const Polinom operator - (const Polinom& q) const;
-        Polinom& operator += (const Polinom& q);
-        Polinom& operator *= (const Polinom& q);
-        Polinom operator * (double d) const;
-        Polinom operator * (const Monom& m) const;
+        Polinom& operator += (const Polinom& q); //
+        Polinom& operator *= (const Polinom& q); //
+        Polinom operator * (double d) const; //
+        Polinom operator * (const Monom& m) const; //
         Polinom operator * (const Polinom& q) const;
 
         friend istream& operator >> (istream& in, Polinom& p);
@@ -33,28 +33,25 @@ class Polinom : public TList<Monom>
 
 };
 
-#include "polinom.h"
 
 Polinom::Polinom(Monom* monoms, int km) : TList<Monom>()
 {
-    const double eps = 0.00000000001;
     TLink<Monom>* curr = pHead;
     for (int i = 0; i < km; i++) {
-        if (monoms[i].GetCoeff() > eps) {
+        if (monoms[i].GetCoeff() > EPS) {
             TList<Monom>::Insert(monoms[i]);
         }
     }
 }
 
-void Polinom::Reduce()
+void Polinom::CombineLikeTerms()
 {
-    const double eps = 0.0000000001;
     TLink<Monom>* prev = pHead->pNext;
     TLink<Monom>* curr = prev->pNext;
 
     while (curr != pHead) {
 
-        if (abs(prev->data.GetCoeff()) < eps) {
+        if (abs(prev->data.GetCoeff()) < EPS) {
             //cout << "q" << endl;
             Delete(prev);
             prev = prev->pNext;
@@ -73,7 +70,7 @@ void Polinom::Reduce()
     }
 
     // проверяем на равенство нулю последний моном
-    if (abs(prev->data.GetCoeff()) < eps) {
+    if (abs(prev->data.GetCoeff()) < EPS) {
         Delete(prev);
     }
 }
@@ -81,7 +78,7 @@ void Polinom::Reduce()
 void Polinom::Insert(const Monom& q)
 {
     (*this).TList<Monom>::Insert(q);
-    (*this).Reduce();
+    (*this).CombineLikeTerms();
 }
 
 bool Polinom::operator == (const Polinom& q) const
@@ -124,7 +121,7 @@ const Polinom Polinom::operator + (const Polinom& q) const
 {
     Polinom res = (*this);
     res.Merge(q);
-    res.Reduce();
+    res.CombineLikeTerms();
    // res.Reduce();
     return res;
 }
@@ -143,7 +140,7 @@ Polinom Polinom::operator * (double d) const
         curr->data = curr->data*d;
         curr = curr->pNext;
     }
-    res.Reduce();
+    res.CombineLikeTerms();
     return res;
 }
 
@@ -162,7 +159,7 @@ Polinom Polinom::operator * (const Monom& m) const
         curr->data = (curr->data) * m;
         curr = curr->pNext;
     }
-    res.Reduce();
+    res.CombineLikeTerms();
     return res;
 }
 
@@ -175,15 +172,15 @@ Polinom& Polinom::operator *= (const Polinom& q)
         curr2 = curr2->pNext;
     }
     (*this) = temp;
-    Reduce();
+    CombineLikeTerms();
     return *this;
 }
 
 Polinom Polinom::operator * (const Polinom& q) const
 {
     Polinom res(*this);
-    res *= q;   
-    res.Reduce();
+    res *= q;
+    res.CombineLikeTerms();
     return res;
 }
 
@@ -196,7 +193,7 @@ istream& operator >> (istream& is, Polinom& p)
         is >> m;
         p.Insert(m);
     }
-    p.Reduce();
+    p.CombineLikeTerms();
     return is;
 }
 

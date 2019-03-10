@@ -1,6 +1,7 @@
 ﻿#ifndef __MONOM_H
 #define __MONOM_H
 
+#define EPS 0.0000000001
 #include "exception.h"
 
 class Monom
@@ -95,8 +96,7 @@ void Monom::SetIndex(int index)
 
 bool Monom::operator == (const Monom& q) const
 {
-    const double eps = 0.000000001;
-    return (((coeff_ - q.coeff_) < eps) && (index_ == q.index_) && (sum_ == q.sum_));
+    return (((coeff_ - q.coeff_) < EPS) && (index_ == q.index_) && (sum_ == q.sum_));
 }
 
 bool Monom::operator != (const Monom& q) const
@@ -177,11 +177,10 @@ Monom& Monom::operator *= (const Monom& q)
 
 const Monom Monom::operator * (const Monom& q) const
 {
-    double eps = 0.000000001;
     Monom res(coeff_ * q.coeff_, (index_ + q.index_));
     
     // делаем проверку на превышение максимальной степени для ненулевых мономов
-    if (res.sum_ != (sum_ + q.sum_) && (res.coeff_ > eps)) {
+    if (res.sum_ != (sum_ + q.sum_) && (res.coeff_ > EPS)) {
         throw Exception("cannot multiply monoms: max degree greater than 9");
     }
     return res;
