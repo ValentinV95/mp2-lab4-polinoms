@@ -5,11 +5,13 @@
 using namespace std;
 
 class Polynom: public Monom{
-Link Head;
+	Link Head;
+	void init();
 public:
 	Polynom();
-	Polynom(string str);
-	void Add(int power, int cf);
+	Polynom(string str); 
+	void loadString(string str);
+	void Add(int power, double cf);
 	Polynom& operator+(Polynom op2);
 	Polynom& operator-(Polynom op2);
 	Polynom& operator*(Polynom op2);

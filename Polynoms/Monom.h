@@ -6,10 +6,10 @@ class Monom;
 typedef Monom* Link; //указатель на моном
 class Monom {
 	int power; //степень
-	int cf;    //коэффициент 
+	double cf;    //коэффициент 
 	Link pointer;   //указатель на след.моном
 public:
-	Monom(int _power = 0, int _cf = 0, Link _pointer = NULL) // конструктор инициализации
+	Monom(int _power = 0, double _cf = 0, Link _pointer = NULL) // конструктор инициализации
 	{
 		power = _power;
 		cf = _cf;
@@ -19,7 +19,7 @@ public:
 	{
 		power = _power;
 	}
-	void SetCf(int _cf) //установка коэф
+	void SetCf(double _cf) //установка коэф
 	{
 		cf = _cf;
 	}
@@ -31,7 +31,7 @@ public:
 	{
 		return power;
 	}
-	int GetCf(void) const //получить коэф
+	double GetCf(void) const //получить коэф
 	{
 		return cf;
 	}

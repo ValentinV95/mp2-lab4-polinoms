@@ -3,20 +3,30 @@
 #include "stdafx.h"
 #include "Polynoms.h"
 
-Polynom::Polynom() {
-	Head = new Monom(-1, 0, Head);
-	Head->SetPointer(Head);
+void Polynom::init() {
+	if (Head == nullptr)
+	{
+		Head = new Monom(-1, 0, NULL);
+		Head->SetPointer(Head);
+	}
 }
 
-Polynom::Polynom(string str)  {
-	Head = new Monom(-1, 0, Head);
-	Head->SetPointer(Head);
-	int len = str.length();
+Polynom::Polynom() {
+	Head = nullptr; // чтобы память не загружалась при бездействии
+}
+
+void Polynom::loadString(string str) {
+	if (Head != nullptr)
+	{
+		delete Head;
+	}
+	init();
 	int i = 0;
-	while (i != len){
+	int len = str.length();
+	while (i != len) {
 		int pow = 0;
-		int cff = 0;
-		if (str[i] == '-'){
+		double cff = 0;
+		if (str[i] == '-') {
 			i++;
 			string t = "";
 			while (str[i] != 'x')
@@ -24,30 +34,30 @@ Polynom::Polynom(string str)  {
 				t = t + str[i];
 				i++;
 			}
-			cff = -1 * atoi(t.c_str());
+			cff = -1 * atof(t.c_str());
 			cout << "cff=" << cff << endl;
 		}
-		if (str[i] == '+'){
+		if (str[i] == '+') {
 			i++;
 			string t = "";
 			while (str[i] != 'x')
 			{
 				t = t + str[i]; i++;
 			}
-			cff = atoi(t.c_str());
+			cff = atof(t.c_str());
 			cout << "cff=" << cff << endl;
 		}
-		if (str[i] <= '9' && str[i] >= '0'){
+		if (str[i] <= '9' && str[i] >= '0') {
 			string t = "";
 			while (str[i] != 'x')
 			{
 				t = t + str[i];
 				i++;
 			}
-			cff = atoi(t.c_str());
+			cff = atof(t.c_str());
 			cout << "coef=" << cff << endl;
 		}
-		if (str[i] == 'x'){
+		if (str[i] == 'x') {
 			cout << "There is X" << endl;
 			i++;
 			string t = "";
@@ -56,15 +66,15 @@ Polynom::Polynom(string str)  {
 			{
 				t = t + str[i]; i++;
 			}
-			k = atoi(t.c_str());
-			if (k >=0 && k < 21) {
+			k = atof(t.c_str());
+			if (k >= 0 && k < 21) {
 				cout << "st X is " << k << endl;
 				k *= 400;
 				pow += k;
 			}
-			else throw( "The wrong power of X");
+			else throw("The wrong power of X");
 		}
-		if (str[i] == 'y'){
+		if (str[i] == 'y') {
 			cout << "There is Y" << endl;
 			i++;
 			string t = "";
@@ -74,14 +84,14 @@ Polynom::Polynom(string str)  {
 				t = t + str[i]; i++;
 			}
 			k = atoi(t.c_str());
-			if (k >=0 && k < 21) {
-			cout << "st Y is " << k << endl;
-			k *= 20;
-			pow += k;
+			if (k >= 0 && k < 21) {
+				cout << "st Y is " << k << endl;
+				k *= 20;
+				pow += k;
 			}
-			else throw( "The wrong power of Y");
+			else throw("The wrong power of Y");
 		}
-		if (str[i] == 'z'){
+		if (str[i] == 'z') {
 			cout << "There is Z" << endl;
 			i++;
 			string t = "";
@@ -92,17 +102,23 @@ Polynom::Polynom(string str)  {
 				i++;
 			}
 			k = atoi(t.c_str());
-			if (k >=0 && k < 21) {
-			cout << "st Z is " << k << endl;
-			pow += k;
+			if (k >= 0 && k < 21) {
+				cout << "st Z is " << k << endl;
+				pow += k;
 			}
-			else ( "The wrong power of Z");
+			else ("The wrong power of Z");
 		}
 		Add(pow, cff);
 	}
 }
 
-void Polynom::Add(int power, int cf)  {
+Polynom::Polynom(string str) {
+	Head = nullptr;
+	loadString(str);
+}
+
+void Polynom::Add(int power, double cf)  {
+	init();
 	Link prev = Head, cur = Head, tmp; //prev=указатель на пред cur=указатель на данный эл списка
 	if (cf != 0){
 		while ((cur->GetPointer()->GetPower() != -1)/*не бегать по кругу*/ && (cur->GetPointer()->GetPower() > power)) //найти нужное место для добавляемого монома
@@ -129,8 +145,13 @@ void Polynom::Add(int power, int cf)  {
 }
 
  Polynom &Polynom::operator+(Polynom op2) {
+	 init();
 	 Polynom res;
-	 Link cur = res.Head->GetPointer()/*бегает по результату*/, point = Head->GetPointer(); //бегает по левому операнду
+	 res.init();
+
+	 Link cur = res.Head->GetPointer(); /*бегает по результату*/
+	 Link point = Head->GetPointer(); //бегает по левому операнду
+
 	 while (point->GetPower() != -1)
 	 {
 		 res.Add(point->GetPower(), point->GetCf());
@@ -146,8 +167,12 @@ void Polynom::Add(int power, int cf)  {
  }
 
  Polynom &Polynom::operator-(Polynom op2) {
+	 init();
 	 Polynom res;
-	 Link cur = res.Head->GetPointer()/*бегает по результату*/, point = Head->GetPointer(); //бегает по левому операнду
+	 res.init();
+
+	 Link cur = res.Head->GetPointer(); /*бегает по результату*/
+	 Link point = Head->GetPointer(); //бегает по левому операнду
 	 while (point->GetPower() != -1)
 	 {
 		 res.Add(point->GetPower(), point->GetCf());
@@ -163,8 +188,12 @@ void Polynom::Add(int power, int cf)  {
  }
 
  Polynom &Polynom::operator*(Polynom op2){
+	 init();
 	 Polynom res;
-	 Link cur1 = Head->GetPointer(), cur2 = op2.Head->GetPointer();
+	 res.init();
+
+	 Link cur1 = Head->GetPointer();
+	 Link cur2 = op2.Head->GetPointer();
 	 while (cur1->GetPower() != -1)
 	 {
 		 while (cur2->GetPower() != -1)
@@ -179,8 +208,15 @@ void Polynom::Add(int power, int cf)  {
  }
 
  bool Polynom::operator==(const Polynom&op2) const {
+	 if (Head == nullptr)
+	 {
+		 if (op2.Head == nullptr)
+			 return true;
+		 return false;
+	 }
 	 bool res = true;
-	 Link cur1 = Head->GetPointer(), cur2 = op2.Head->GetPointer();
+	 Link cur1 = Head->GetPointer();
+	 Link cur2 = op2.Head->GetPointer();
 	 while ((cur1->GetPower() != -1) && (cur2->GetPower() != -1)) {
 		 if ((abs(cur1->GetCf() - cur2->GetCf())) || (cur1->GetPower() != cur2->GetPower()))
 			 res = false;
@@ -194,9 +230,11 @@ void Polynom::Add(int power, int cf)  {
  }
 
  double Polynom::calc(double x, double y, double z) {
+	 init();
+	 double tmp;
 	 double sum = 0;
 	 Link cur = Head->GetPointer();
-	 double tmp;
+
 	 while (cur->GetPower() != -1)
 	 {
 		 tmp = cur->GetCf() * pow(x, cur->GetPower() / 400) * pow(y, (cur->GetPower() % 400) / 20) * pow(z, cur->GetPower() % 20);
@@ -207,6 +245,9 @@ void Polynom::Add(int power, int cf)  {
  }
 
  void Polynom::Print() {
+	 if (Head == nullptr) {
+		 return throw;
+	 }
 	 int x, y, z;
 	 Link tmp = Head->GetPointer();
 	 while (tmp->GetPower() != -1)
