@@ -18,18 +18,19 @@ class pol {
 	unsigned int size;
 public:
 	pol();
-	/*~pol();*/
+	~pol();
 
+	
 	void insert(monom m);
 	void show();
-
-	pol& operator= (pol &sec);
+	void clear();
 
 	pol operator+ (pol sec);
 	pol operator- (pol sec);
 	pol operator* (pol sec);	
+	pol& operator= (pol const &sec);
 
-	pol operator* (double con);
+	pol operator* (double con) const;
 
 	bool operator== (const pol &sec) const;
 	bool operator!= (const pol &sec) const;

@@ -9,23 +9,25 @@ pol::pol() {
 	size = 0;	
 }
 
-//pol::~pol() {	
-//	if (head->next == NULL)
-//	{
-//		return;
-//	}
-//	monom* cur = head->next;
-//	monom* temp;
-//
-//	while (cur != NULL)
-//	{
-//		temp = cur->next;
-//		delete cur;
-//		cur = temp;
-//	}
-//	head->next = NULL;
-//	delete head;
-//}
+pol::~pol() {		
+	clear();
+	head = NULL;
+}
+
+void pol::clear() {
+	if (head->next == NULL)
+	{
+		return;
+	}	
+	monom *temp = head->next;
+	while (temp->next != NULL)
+	{
+		monom *a = temp;
+		temp = temp->next;
+		delete a;
+	}	
+	head->next = NULL;
+}
 
 void pol::insert(monom m) {
 	if(m.a!=0 && m.s<1000 && m.s>=0){
@@ -99,47 +101,34 @@ void pol::show() {
 	cout <<endl;
 }
 
-pol& pol::operator= (pol &sec) {
-	head->next = NULL;
-	size = 0;
 
-	monom *tmp2 = sec.head;
-
-	while (tmp2->next) {
-
-		insert(*(tmp2->next));
-		tmp2 = tmp2->next;
-
-	}
-	return *this;
-}
 pol pol::operator+ (pol sec) {
-	pol np;
+	pol *np = new pol;
 	monom *tmp = head, *tmp2 = sec.head;
 	while ((tmp->next != NULL) && (tmp2->next != NULL)) {
 
 		if (((tmp->next)->s) >= ((tmp2->next)->s)) {
 
-			np.insert(*(tmp->next));
+			np->insert(*(tmp->next));
 			tmp = tmp->next;
 		}
 		else {
 
-			np.insert(*(tmp2->next));
+			np->insert(*(tmp2->next));
 			tmp2 = tmp2->next;
 		}
 	}
 	while (tmp->next != NULL)
 	{
-		np.insert(*(tmp->next));
+		np->insert(*(tmp->next));
 		tmp = tmp->next;
 	}
 	while (tmp2->next != NULL)
 	{
-		np.insert(*(tmp2->next));
+		np->insert(*(tmp2->next));
 		tmp2 = tmp2->next;
 	}
-	return np;
+	return *np;
 
 }
 pol pol::operator- (pol sec) {
@@ -148,7 +137,7 @@ pol pol::operator- (pol sec) {
 
 pol pol::operator* (pol sec) {
 	setlocale(LC_ALL, "Russian");
-	pol np;
+	pol *np = new pol;
 	monom *tmp = head, *tmp2;
 	for (int i = 0; i < size; i++) {
 		tmp2 = sec.head;
@@ -159,7 +148,7 @@ pol pol::operator* (pol sec) {
 				nw->a = (tmp->next->a)*(tmp2->next->a);
 				nw->next;
 				tmp2 = tmp2->next;
-				np.insert(*nw);
+				np->insert(*nw);
 			}
 			else {
 				cout << "превышена степень" << endl;
@@ -168,20 +157,35 @@ pol pol::operator* (pol sec) {
 		}
 		tmp = tmp->next;
 	}
-	return np;
+	return *np;
 }
-pol pol::operator* (double con)  {
+pol pol::operator* (double con) const {
 	monom *tmp = head;
-	pol np;
+	pol *np = new pol;
 	for (int i = 0; i < size;i++) {
 		monom *nw = new monom;
-		nw->a=con*(tmp->next->a);
+		nw->a = con*(tmp->next->a);
 		nw->s = (tmp->next->s);
 		nw->next = NULL;
-		np.insert(*nw);
-		tmp = tmp->next;		
+		np->insert(*nw);
+		tmp = tmp->next;
 	}
-	return np;
+	return *np;
+}
+
+pol& pol::operator=(const pol &p)
+{
+	if (head != p.head)
+	{
+		clear();
+		monom *temp = p.head->next;
+		while (temp != NULL)
+		{
+			insert(*temp);
+			temp = temp->next;
+		}
+	}
+	return *this;
 }
 
 bool pol::operator== (const pol &sec) const {
