@@ -24,9 +24,9 @@ class Polynom
 		Polynom(vector <pair<double,unsigned int>> a);
 		~Polynom();
 
-		Monom* find_monom(double coef_, unsigned int exp_);
-		bool isEmpty();
-		bool find(double coef_, unsigned int exp_);
+		Monom* find_monom(double coef_, unsigned int exp_) const;
+		bool isEmpty() const;
+		bool find(double coef_, unsigned int exp_) const;
 		void insert(double coef_, unsigned int exp_);
 		void del(double coef_, unsigned int exp_);
 		void clear();

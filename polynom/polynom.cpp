@@ -28,7 +28,7 @@ Polynom::~Polynom()
 	clear();
 }
 
-Monom* Polynom::find_monom(double coef_, unsigned int exp_) 
+Monom* Polynom::find_monom(double coef_, unsigned int exp_) const
 {
 	if (abs(coef_) < EPS)
 	{
@@ -56,17 +56,17 @@ Monom* Polynom::find_monom(double coef_, unsigned int exp_)
 	}
 }
 
-bool Polynom::isEmpty() 
+bool Polynom::isEmpty() const
 {
 	return head == NULL;
 }
 
-bool Polynom::find(double coef_,unsigned int exp_) 
+bool Polynom::find(double coef_,unsigned int exp_) const
 {
 	return find_monom(coef_, exp_) != NULL;
 }
 
-void Polynom::insert(double coef_, unsigned int exp_)
+void Polynom::insert(double coef_, unsigned int exp_) 
 {
 	if (abs(coef_) < EPS)
 	{
@@ -92,33 +92,53 @@ void Polynom::insert(double coef_, unsigned int exp_)
 		{
 			temp = temp->next;
 		}
-		if (temp->next == NULL)
+		if (temp->exp == exp_)
+		{
+			if (abs(temp->coef + coef_) < EPS)
+			{
+				del(temp->coef, temp->exp);
+			}
+			else
+			{
+				temp->coef += coef_;
+			}
+			return;
+		}
+		if (temp->exp < exp_) // Вставка в конец : temp->next == NULL
 		{
 			temp->next = new Monom();
 			temp->next->coef = coef_;
 			temp->next->exp = exp_;
-			temp->next->prev = temp;
 			temp->next->next = NULL;
+			temp->next->prev = temp;
+			return;
 		}
-		else
+		if (temp->exp> exp_)
 		{
-			if (temp->exp == exp_)
+			if (temp->prev == NULL) // temp->prev == head
 			{
-				temp->coef += coef_;
+				temp->prev = new Monom();
+				temp->prev->coef = coef_;
+				temp->prev->exp = exp_;
+				temp->prev->next = temp;
+				temp->prev->prev = NULL;
+				head = temp->prev;
 			}
 			else
 			{
 				temp->prev->next = new Monom();
 				temp->prev->next->coef = coef_;
 				temp->prev->next->exp = exp_;
-				temp->prev->next->prev = temp->prev;
 				temp->prev->next->next = temp;
+				temp->prev->next->prev = temp->prev;
+				temp->prev = temp->prev->next;
+				return;
 			}
 		}
 	}
 }
 
-void Polynom::del(double coef_, unsigned int exp_)
+void Polynom::del(double coef_, unsigned int exp_) 
 {
 	if (abs(coef_) < EPS)
 	{
@@ -136,22 +156,26 @@ void Polynom::del(double coef_, unsigned int exp_)
 			temp->prev->next = temp->next;
 			temp->next->prev = temp->prev;
 			delete temp;
+			return;
 		}
 		if (temp->prev == NULL && temp->next != NULL)
 		{
 			head = temp->next;
 			temp->next->prev = NULL;
 			delete temp;
+			return;
 		}
 		if (temp->prev != NULL && temp->next == NULL)
 		{
 			temp->prev->next = NULL;
 			delete temp;
+			return;
 		}
 		if (temp->prev == NULL && temp->next == NULL)
 		{
 			head = NULL;
 			delete temp;
+			return;
 		}
 	}
 	else
@@ -162,11 +186,9 @@ void Polynom::del(double coef_, unsigned int exp_)
 
 void Polynom::clear()
 {
-	Monom* temp = head;
-	while (temp != NULL)
+	while (head != NULL)
 	{
-		del(temp->coef,temp->exp);
-		temp = temp->next;
+		del(head->coef, head->exp);
 	}
 }
 
@@ -179,6 +201,7 @@ Polynom& Polynom::operator = (const Polynom& a)
 		while (temp != NULL)
 		{
 			insert(temp->coef, temp->exp);
+			temp = temp->next;
 		}
 	}
 	return *this;
@@ -230,11 +253,13 @@ Polynom Polynom::operator + (const Polynom& a)
 		{
 			b->insert(temp_1->coef, temp_1->exp);
 			temp_1 = temp_1->next;
+			continue;
 		}
 		if (temp_1->exp > temp_2->exp)
 		{
 			b->insert(temp_2->coef, temp_2->exp);
 			temp_2 = temp_2->next;
+			continue;
 		}
 		if (temp_1->exp == temp_2->exp)
 		{
@@ -244,6 +269,7 @@ Polynom Polynom::operator + (const Polynom& a)
 			}
 			temp_1 = temp_1->next;
 			temp_2 = temp_2->next;
+			continue;
 		}
 	}
 	if (temp_1 != NULL)
@@ -290,10 +316,7 @@ Polynom Polynom::operator * (double multiplier)
 			temp = temp->next;
 		}
 	}
-	else
-	{
-		return *this;
-	}
+	return *this;
 }
 
 Polynom Polynom::operator * (const Polynom& a)
@@ -323,6 +346,7 @@ Polynom Polynom::operator * (const Polynom& a)
 			temp_2 = temp_2->next;
 		}
 		temp_1 = temp_1->next;
+		temp_2 = a.head;
 	}
 	return *b;
 }
@@ -348,6 +372,7 @@ ostream& operator << (ostream& os, const Polynom& output)
 				cout << " + ";
 			}
 		}
+		temp = temp->next;
 	}
 	return os;
 }
