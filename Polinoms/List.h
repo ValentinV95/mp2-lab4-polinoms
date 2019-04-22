@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <cstdio>
 #include <stack>
 using namespace std;
@@ -24,9 +24,9 @@ private:
 	int size;
 	friend class Polinom;
 public:
-	//Конструктор
+	//РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	List() : head(nullptr), size(0) {}
-	//Деструктор
+	//Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	~List() 
 	{
 		Node <ValType> * ptr = head;
@@ -37,17 +37,17 @@ public:
 			ptr = head;
 		}
 	}
-	//Корень списка
+	//РљРѕСЂРµРЅСЊ СЃРїРёСЃРєР°
 	Node<ValType>* Root()
 	{
 		return head;
 	}
-	//Размер
+	//Р Р°Р·РјРµСЂ
 	int Size()
 	{
 		return size;
 	}
-	//Вставка звена в список
+	//Р’СЃС‚Р°РІРєР° Р·РІРµРЅР° РІ СЃРїРёСЃРѕРє
 	void Insert(ValType M)
 	{
 		Node <ValType> *A = new Node<ValType>;
@@ -91,7 +91,7 @@ public:
 		}
 		size++;
 	}
-	//Удаление звена из списка
+	//РЈРґР°Р»РµРЅРёРµ Р·РІРµРЅР° РёР· СЃРїРёСЃРєР°
 	void Delete(ValType M)
 	{
 		int k = 0;
@@ -128,7 +128,7 @@ public:
 			k++;
 		}
 	}
-	//Слияние двух соседних звеньев
+	//РЎР»РёСЏРЅРёРµ РґРІСѓС… СЃРѕСЃРµРґРЅРёС… Р·РІРµРЅСЊРµРІ
 	void MergerNode(Node<ValType>* p1, Node<ValType>* p2)
 	{
 		p1->data = p1->data + p2->data;

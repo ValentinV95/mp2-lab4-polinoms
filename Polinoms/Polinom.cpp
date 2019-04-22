@@ -90,7 +90,7 @@ void Polinom::Delete_Similar()
 	Node<Monom>* t1 = t->next;
 	while (t1 != nullptr)
 	{
-		if (t->data.deg == t1->data.deg)
+		if (t->data == t1->data)
 		{
 
 			this->P.MergerNode(t, t1);
@@ -117,7 +117,7 @@ bool Polinom::operator == (const Polinom& A) const
 	{
 		while (t1 != nullptr)
 		{
-			if (t1->data!=t2->data)
+			if ((t1->data != t2->data)||(t1->data.coeff != t2->data.coeff))
 				return false;
 			t1 = t1->next;
 			t2 = t2->next;
@@ -153,7 +153,7 @@ Polinom Polinom:: operator +(const Polinom& A)
 		}
 		else
 		{
-			if (t1->data.deg == t2->data.deg)
+			if (t1->data == t2->data)
 			{
 				temp = t2->data + t1->data;
 				if (temp.coeff != 0)
@@ -178,8 +178,11 @@ Polinom Polinom:: operator +(const Polinom& A)
 	}
 	if ((t1 != nullptr) && (t2 == nullptr))
 	{
-		B.P.Insert(t1->data);
-		t1 = t1->next;
+		while (t1 != nullptr)
+		{
+			B.P.Insert(t1->data);
+			t1 = t1->next;
+		}
 	}
 	return B;
 }
