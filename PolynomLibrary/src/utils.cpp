@@ -32,12 +32,12 @@ bool isMultiplicative(int a, int b)
 }
 
 // Извлечение из строки s ненулевых значений (разделитель - символ delim)
-std::vector<double> splitAndRemoveNullCoeffs(const std::string &s, char delim) 
+std::vector<double> splitAndRemoveNullCoeffs(const std::string &s, char delim)
 {
 	std::stringstream ss(s); // Поток строк
 	std::string item; // Значение считываемого элемента
 	std::vector<double> elems; // Результирующий вектор
-	
+
 	int i = 1;
 	while (std::getline(ss, item, delim)) // Пока строка не кончилась
 	{
@@ -47,8 +47,13 @@ std::vector<double> splitAndRemoveNullCoeffs(const std::string &s, char delim)
 			elems.push_back(a); // Добавление в вектор
 			i++;
 		}
+		else
+		{
+			if (!std::getline(ss, item, delim))
+				break;
+		}
 	}
-	
+
 	// Если вектор содержит не более одного значения, то запись нулевых значений
 	if (elems.size() < 2)
 	{

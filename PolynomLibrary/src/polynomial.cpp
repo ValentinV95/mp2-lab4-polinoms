@@ -3,6 +3,8 @@
 #include <cmath>
 #include <sstream>
 
+#define EPS 1E-15
+
 // Упорядочивание многочлена
 void Polynomial::arrange()
 {
@@ -41,7 +43,7 @@ void Polynomial::combineLikeTerms()
 	// Удаление возникших нулей (если есть только ноль, то не удаляется)
 	while (a != nullptr)
 	{
-		if (a->data.getCoeff() == 0)
+		if (abs(a->data.getCoeff()) < EPS)
 		{
 			// Если голова
 			if (a == this->getMonomials()->getHead())
