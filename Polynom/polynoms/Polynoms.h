@@ -34,15 +34,14 @@ public:
 	// methods
 	size_t getSize() { return size; }
 	void clear();
-	void insert(Monom monom); // вставка в нужное место, если слагаемые подобные, 
-							  // то складываем коэф, если коэф < eps, то удаляем моном из списка
+	void insert(Monom monom); 
 	void insert(double coef, int exp);
 
 	void merge(const Polynom &polynom);
 	void pop_front();
 	void push_front(Monom monom);
 	void push_back(Monom monom);
-	void del(Monom monom); // такой моном точно есть в списке
+	void del(Monom monom); 
 	bool find(double coef, int exp);
 
 	// operators

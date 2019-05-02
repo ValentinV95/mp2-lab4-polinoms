@@ -45,7 +45,6 @@ Polynom::Polynom(const Polynom& polynom)
 
 Polynom::~Polynom()
 {
-	//clear();
 }
 
 inline void Polynom::clear()
@@ -90,9 +89,8 @@ void Polynom::merge(const Polynom &pol)
 	}
 	*this = tmp;
 
-	tmp.head = NULL; // для того, чтобы локальный деструктор, 
-	tmp.size = 0;    // при удалении tmp, не менял значение *this
-}
+	tmp.head = NULL;  
+	tmp.size = 0;  
 
 inline void Polynom::pop_front()
 {
