@@ -91,6 +91,7 @@ void Polynom::merge(const Polynom &pol)
 
 	tmp.head = NULL;  
 	tmp.size = 0;  
+}
 
 inline void Polynom::pop_front()
 {
