@@ -10,7 +10,7 @@ TEST(Polynom, can_add_monom)
 {
 	Polynom a;
 	a.insert(1, 101);
-	EXPECT_EQ(true, a.find(1, 101));
+	EXPECT_EQ(true, a.find(101));
 }
 
 TEST(Polynom, can_del_monom)
@@ -19,7 +19,7 @@ TEST(Polynom, can_del_monom)
 	a.insert(1, 101);
 	Monom b(1, 101);
 	a.del(b);
-	EXPECT_EQ(false, a.find(1, 101));
+	EXPECT_EQ(false, a.find(101));
 }
 
 TEST(Polynom, can_clear_polynom)
@@ -34,8 +34,8 @@ TEST(Polynom, can_find_in_polynom)
 {
 	Polynom a;
 	a.insert(1, 100);
-	EXPECT_EQ(true, a.find(1, 100));
-	EXPECT_EQ(false, a.find(1, 101));
+	EXPECT_EQ(true, a.find(100));
+	EXPECT_EQ(false, a.find(101));
 }
 
 TEST(Polynom, can_sum_polynoms)
@@ -47,8 +47,8 @@ TEST(Polynom, can_sum_polynoms)
 	b.insert(75, 105);
 	// (x + 2xz^5) + ( 3x + 75xz^5) = 4x + 77xz^5
 	c = a + b;
-	EXPECT_EQ(true, c.find(4, 100));
-	EXPECT_EQ(true, c.find(77, 105));
+	EXPECT_EQ(true, c.find(100));
+	EXPECT_EQ(true, c.find(105));
 }
 
 TEST(Polynom, can_del_monom_with_coef_0_after_sum)
@@ -69,8 +69,8 @@ TEST(Polynom, can_sub_polynoms)
 	b.insert(75, 105);
 	// (x + 2xz^5) - ( 3x + 75xz^5) = -2x -73xz^5
 	c = a - b;
-	EXPECT_EQ(true, c.find(-2, 100));
-	EXPECT_EQ(true, c.find(-73, 105));
+	EXPECT_EQ(true, c.find(100));
+	EXPECT_EQ(true, c.find(105));
 }
 
 TEST(Polynom, can_mult_slacar_by_polynom)
@@ -78,9 +78,9 @@ TEST(Polynom, can_mult_slacar_by_polynom)
 	Polynom a;
 	a.insert(1, 101);
 	a = a * 5;
-	EXPECT_EQ(true, a.find(5, 101));
+	EXPECT_EQ(true, a.find(101));
 	a = a * 2;
-	EXPECT_EQ(true, a.find(10, 101));
+	EXPECT_EQ(true, a.find(101));
 }
 
 TEST(Polynom, can_mult_polynoms)
@@ -92,10 +92,10 @@ TEST(Polynom, can_mult_polynoms)
 	b.insert(75, 105);
 	// (x + 2xz^4) * ( 3x + 75xz^5) = 3x^2 + 75x^2 z^5 + 6x^2 z^4 + 150x^2 z^9
 	c = a * b;
-	EXPECT_EQ(true, c.find(3, 200));
-	EXPECT_EQ(true, c.find(150, 209));
-	EXPECT_EQ(true, c.find(75, 205));
-	EXPECT_EQ(true, c.find(6, 204));
+	EXPECT_EQ(true, c.find(200));
+	EXPECT_EQ(true, c.find(209));
+	EXPECT_EQ(true, c.find(205));
+	EXPECT_EQ(true, c.find(204));
 }
 
 TEST(Polynom, can_not_mult_polynoms_exp_greater_than_9)

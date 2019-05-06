@@ -41,8 +41,8 @@ public:
 	void pop_front();
 	void push_front(Monom monom);
 	void push_back(Monom monom);
-	void del(Monom monom); 
-	bool find(double coef, int exp);
+	void del(Monom monom);
+	bool find(int exp);
 
 	// operators
 	Polynom operator + (const Polynom &right) const;

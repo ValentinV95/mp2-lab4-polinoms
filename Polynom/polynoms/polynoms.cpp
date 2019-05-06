@@ -1,6 +1,8 @@
 #include "Polynoms.h"
 #define eps 0.00000001
 
+
+
 Monom::Monom(double _coef, int _exp)
 {
 	if (_exp > 999 || _exp < 0) {
@@ -37,14 +39,21 @@ Polynom::Polynom()
 	head = nullptr;
 }
 
-Polynom::Polynom(const Polynom& polynom)
+Polynom::Polynom(const Polynom& polynom) : Polynom()
 {
-	head = polynom.head;
-	size = polynom.size;
+	Monom* tmp = polynom.head;
+	while (tmp != nullptr)
+	{
+		this->insert(tmp->coef, tmp->exp);
+		tmp = tmp->next;
+	}
 }
+
+
 
 Polynom::~Polynom()
 {
+	clear();
 }
 
 inline void Polynom::clear()
@@ -89,8 +98,9 @@ void Polynom::merge(const Polynom &pol)
 	}
 	*this = tmp;
 
-	tmp.head = NULL;  
-	tmp.size = 0;  
+	tmp.head = NULL;
+	tmp.size = 0;
+}
 
 inline void Polynom::pop_front()
 {
@@ -186,12 +196,11 @@ void Polynom::del(Monom monom)
 	size--;
 }
 
-bool Polynom::find(double coef, int exp)
+bool Polynom::find(int exp)
 {
 	Monom *curr = head;
-	Monom a(coef, exp);
 	while (curr != nullptr) {
-		if (*curr == a) {
+		if (curr->exp == exp) {
 			return true;
 		}
 		curr = curr->next;
