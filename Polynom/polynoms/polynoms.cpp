@@ -98,13 +98,8 @@ void Polynom::merge(const Polynom &pol)
 	}
 	*this = tmp;
 
-<<<<<<< HEAD
-	tmp.head = NULL;
-	tmp.size = 0;
-=======
 	tmp.head = NULL;  
 	tmp.size = 0;  
->>>>>>> d8a5eb062f22558cf959c054a93ca5998c4f52f0
 }
 
 inline void Polynom::pop_front()
