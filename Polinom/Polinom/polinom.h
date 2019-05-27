@@ -35,9 +35,9 @@ public:
 	Polinom(Polinom& _oth):Polinom()
 	{
 		Monom* _monom1 = _oth.head->next;
+		Monom* _monom2 = head;
 		while (_monom1 != NULL)
 		{
-			Monom* _monom2 = head;
 			Monom* _monom3 = new Monom;
 			_monom3->next = NULL;
 			_monom3->prev = _monom2;
@@ -45,6 +45,7 @@ public:
 			_monom3->fact = _monom1->fact;
 			_monom2->next = _monom3;
 			_monom1 = _monom1->next;
+			_monom2 = _monom2->next;
 		}
 	}
 
@@ -117,7 +118,7 @@ public:
 		return NULL;
 	}
 
-	bool boolfind(int _deg, float _fact)
+	bool boolfind(int _deg)
 	{
 		return NULL == !(find(_deg));
 	}
