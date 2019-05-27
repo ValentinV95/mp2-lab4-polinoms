@@ -38,10 +38,6 @@ public:
 		while (_monom1 != NULL)
 		{
 			Monom* _monom2 = head;
-			while (_monom2->next != NULL)
-			{
-				_monom2 = _monom2->next;
-			}
 			Monom* _monom3 = new Monom;
 			_monom3->next = NULL;
 			_monom3->prev = _monom2;
@@ -100,7 +96,7 @@ public:
 		return !(*this == _oth);
 	}
 
-	Monom* find(int _deg, float _fact)
+	Monom* find(int _deg)
 	{
 		if (_deg < 0 || _deg > 999)
 		{
@@ -109,7 +105,7 @@ public:
 		Monom* _monom1 = head->next;
 		while (_monom1 != NULL)
 		{
-			if (_monom1->deg == _deg && fabs(_monom1->fact - _fact) < 0.00000001)
+			if (_monom1->deg == _deg)
 			{
 				return _monom1;
 			}
@@ -123,7 +119,7 @@ public:
 
 	bool boolfind(int _deg, float _fact)
 	{
-		return NULL == !(find(_deg, _fact));
+		return NULL == !(find(_deg));
 	}
 
 	void insert(int _deg, float _fact)
@@ -190,7 +186,7 @@ public:
 
 	void del(int _deg, float _fact)
 	{
-		Monom* _monom1 = find(_deg, _fact);
+		Monom* _monom1 = find(_deg);
 		if (_monom1 != NULL)
 		{
 			if (_monom1->next == NULL)

@@ -42,7 +42,7 @@ int main()
 	{
 		w = false;
 		cout << "Choice operation" << endl;
-		cout << "1 - (pol_1+pol_2), 2 - (pol_1*pol_2), 3 - (pol_1-pol_2), 4 - (pol_2-pol_1)" << endl;
+		cout << "1 - (pol_1 + pol_2), 2 - (pol_1 * pol_2), 3 - (pol_1 - pol_2), 4 - (pol_2 / pol_1)" << endl;
 		cin >> ch;
 		if (ch < 1 || ch > 4)
 		{
@@ -68,6 +68,7 @@ int main()
 		{
 			cout << pol2 - pol1 << endl;
 		}
+		system("pause");
 	}
 	catch (string)
 	{
