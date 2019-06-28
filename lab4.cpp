@@ -79,13 +79,11 @@ class Polynom
 	int size = 0;
 	Node* m_Head = NULL;
 
-	Node* &m_Begin = m_Head;
-
 public:
 	Polynom() {};
 	void push(Monom val)
 	{
-		Node** tmp = &m_Begin;
+		Node** tmp = &m_Head;
 		Node* next = NULL;
 		for (; (*tmp) != NULL; tmp = &((*tmp)->next))
 		{
@@ -105,7 +103,7 @@ public:
 	void clear()
 	{
 		Node* deleteLater;
-		for (Node* tmp = m_Begin; tmp != NULL; delete deleteLater)
+		for (Node* tmp = m_Head; tmp != NULL; delete deleteLater)
 		{
 			deleteLater = tmp;
 			tmp = tmp->next;
@@ -115,7 +113,7 @@ public:
 	}
 	void norm()
 	{
-		for (Node** tmp = &m_Begin; tmp != NULL; )
+		for (Node** tmp = &m_Head; tmp != NULL; )
 		{
 			if ((*tmp)->next)
 			{
@@ -137,7 +135,7 @@ public:
 				break;
 			}
 		}
-		for (Node** tmp = &m_Begin; (*tmp) != NULL; tmp = &((*tmp)->next))
+		for (Node** tmp = &m_Head; (*tmp) != NULL; tmp = &((*tmp)->next))
 		{
 			if ((*tmp)->value.con == 0)
 			{
@@ -151,7 +149,7 @@ public:
 	void out()
 	{
 		cout << "MONOM" << endl;
-		for (Node* tmp = m_Begin; tmp != NULL; tmp = tmp->next)
+		for (Node* tmp = m_Head; tmp != NULL; tmp = tmp->next)
 		{
 			cout << tmp->value.con << "*x^" << tmp->value.getX() << "*y^" << tmp->value.getY() << "*z^" << tmp->value.getZ() << endl;
 		}
@@ -161,7 +159,7 @@ public:
 	{
 		Polynom polynom;
 		Monom monom;
-		for (Node* tmp = m_Begin; tmp != NULL; tmp = tmp->next)
+		for (Node* tmp = m_Head; tmp != NULL; tmp = tmp->next)
 		{
 			monom = tmp->value;
 			monom.con *= multi;
@@ -235,7 +233,7 @@ public:
 	{
 
 		this->clear();
-		for (Node* tmp = second.m_Begin; tmp != NULL; tmp = tmp->next)
+		for (Node* tmp = second.m_Head; tmp != NULL; tmp = tmp->next)
 		{
 			this->push(tmp->value);
 		}
@@ -247,8 +245,8 @@ public:
 		{
 			return false;
 		}
-		Node* tmp1 = this->m_Begin;
-		Node* tmp2 = second.m_Begin;
+		Node* tmp1 = this->m_Head;
+		Node* tmp2 = second.m_Head;
 		while (tmp1 != NULL)
 		{
 			if (tmp1->value.st != tmp2->value.st && tmp1->value.con != tmp2->value.con)
@@ -262,7 +260,7 @@ public:
 	}
 	Monom at(int index) const
 	{
-		Node* tmp = m_Begin;
+		Node* tmp = m_Head;
 		for (int i = 0; i != index; ++i)
 		{
 			tmp = tmp->next;
@@ -334,8 +332,8 @@ int main(int argc, char *argv[])
 {
 	/*::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();*/
-	Polynom* pol1 = createPolynom();
-	pol1->out();
+	Polynom pol1;
+	pol1.out();
 	bool quit = false;
 	do
 	{
@@ -354,20 +352,20 @@ int main(int argc, char *argv[])
 	{
 	case 1:
 	{
-	Polynom* pol2 = createPolynom();
-	pol1 = sum(pol1,pol2);
+	Polynom pol2;
+	pol1 = pol1 + pol2;
 	break;
 	}
 	case 2:
 	{
-	Polynom* pol2 = createPolynom();
-	pol1 = mins(pol1,pol2);
+	Polynom pol2;
+	pol1 = pol1 - pol2;
 	break;
 	}
 	case 3:
 	{
-	Polynom* pol2 = createPolynom();
-	pol1 = mult(pol1,pol2);
+	Polynom pol2;
+	pol1 = pol1 * pol2;
 	break;
 	}
 	case 4:
@@ -375,7 +373,7 @@ int main(int argc, char *argv[])
 	cout << "Vvedite konstanty" << endl;
 	int n;
 	cin >> n;
-	pol1->mult(n);
+	pol1 = pol1 * n;
 	break;
 	}
 	case 5:
@@ -386,7 +384,7 @@ int main(int argc, char *argv[])
 	}
 	}while(quit);
 
-	delete pol1;
+	
 
 
 }
