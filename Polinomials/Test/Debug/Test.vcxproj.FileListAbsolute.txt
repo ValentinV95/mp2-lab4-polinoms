@@ -1,0 +1,2 @@
+C:\Users\Розанов Дмитрий\source\repos\Polinomials\Test\Debug\Test.vcxproj.CopyComplete
+D:\mp2-lab4-polinoms\Polinomials\Test\Debug\Test.vcxproj.CopyComplete
