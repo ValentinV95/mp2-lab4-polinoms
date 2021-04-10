@@ -93,6 +93,6 @@ TEST(List, compare_value_head_el_after_get_head_list_with_10el)
 		a.add(i);
 	}
 
-	EXPECT_EQ(a.getHead()->value, 1);
+	EXPECT_EQ(a.getHead()->value, 10);
 }
 
