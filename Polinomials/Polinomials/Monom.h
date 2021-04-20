@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "List.h"
 
 #define ERR_DEG 111111
@@ -55,7 +57,14 @@ public:
 
 	void SetIndex(int _index)
 	{
-		index = _index;
+		if ((_index > 999) || (_index < 0))
+		{
+			throw "ERROR:(_index > 999) || (_index < 0)";
+		}
+		else
+		{
+			index = _index;
+		}
 	}
 
 	Monom operator +(const Monom& _m)
@@ -179,6 +188,21 @@ public:
 			if (_cf != 0)
 			{
 				m.init(_cf, _index);
+				pm.add(m);
+			}
+		}
+
+		bringing_similar();
+	}
+
+	void init(size_t count_monoms, vector<size_t> _index, vector<T> _cf)
+	{
+		Monom<T> m;
+		for (int i = 0; i < count_monoms; i++)
+		{
+			if (_cf[i] != 0)
+			{
+				m.init(_cf[i], _index[i]);
 				pm.add(m);
 			}
 		}

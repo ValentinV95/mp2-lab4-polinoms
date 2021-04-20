@@ -4,18 +4,18 @@
 
 int main()
 {
-	Polinom<int> A, B, C, D, E;
+	Polinom<float> A, B, C, D, E;
 	bool decision = 1;
 
 	while (decision)
 	{
 		cout << endl << "Set polynom A:  ";
 		A.Input(); 
-		//cout << endl << "A= " << A << endl << endl;
+		cout << endl << "A= " << A << endl << endl;
 
 		cout << "Set polynom B:  ";
 		B.Input(); 
-		//cout << endl << "B=" << B << endl << endl;
+		cout << endl << "B=" << B << endl << endl;
 
 		//C = A;
 		//cout << "equally: C = A then C = " << C << endl << endl;
