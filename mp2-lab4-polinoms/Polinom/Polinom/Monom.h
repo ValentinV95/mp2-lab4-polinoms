@@ -12,6 +12,9 @@ public:
 	}
 
 	Monom(const double _coeff, const unsigned short int _degs) {
+		if (_degs >= 1000 || _degs <= 0) {
+			throw std::logic_error("invalid monom's deg");
+		}
 		this->coeff = _coeff;
 		this->degs = _degs;
 	}
@@ -52,7 +55,6 @@ public:
 		{
 			os << " * ";
 
-			// Получение степеней x, y, z
 			unsigned short int degs = m.getDegs();
 			unsigned short int x = degs / 100;
 			unsigned short int y = (degs / 10) % 10;
