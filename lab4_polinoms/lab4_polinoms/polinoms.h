@@ -40,6 +40,31 @@ public:
 		b.DelZero();
 		return(b);
 	}
+	void DelDups()
+	{
+		int k;
+		Node* tmp = a.head;
+		Node* tmp1;
+		while (tmp->next != NULL)
+		{
+			tmp1 = tmp->next;
+			while (tmp1 != NULL)
+			{
+				k = 0;
+				if (tmp->p == tmp1->p)
+				{
+					tmp1->c += tmp->c;
+					k = tmp->p;
+					tmp = tmp->next;
+					a.Del(k);
+					break;
+				}
+				tmp1 = tmp1->next;
+			}
+			if (!k)
+				tmp = tmp->next;
+		}
+	}
 	void DelZero()
 	{
 		int k = 0;
@@ -85,6 +110,15 @@ public:
 	{
 		Node* tmp1 = a.head;
 		Node* tmp2 = b.a.head;
+		a.tail->next = b.a.head;
+		a.tail = b.a.tail;
+
+		a.n += b.a.n;
+		DelDups();
+		DelZero();
+		return(*this);
+		/*Node* tmp1 = a.head;
+		Node* tmp2 = b.a.head;
 		while (tmp1->next != NULL)
 		{
 			tmp2 = b.a.head;
@@ -125,7 +159,7 @@ public:
 
 		a.n += b.a.n;
 		DelZero();
-		return(*this);
+		return(*this);*/
 	}
 	pol& operator*(pol b)
 	{

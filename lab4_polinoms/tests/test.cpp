@@ -217,7 +217,7 @@ TEST(pol, add_1)
 	pol b2(b);
 	pol b3;
 	b3 = b1 + b2;
-	EXPECT_EQ(b3.a.tail->p, 123);
+	EXPECT_EQ(b3.a.tail->p, 121);
 }
 TEST(pol, add_2)
 {
@@ -232,7 +232,7 @@ TEST(pol, add_2)
 	pol b2(b);
 	pol b3;
 	b3 = b1 + b2;
-	EXPECT_EQ(b3.a.head->c, 27);
+	EXPECT_EQ(b3.a.head->c, 14);
 }
 TEST(pol, add_3)
 {
@@ -301,7 +301,7 @@ TEST(pol, sub_1)
 	pol b2(b);
 	pol b3;
 	b3 = b1 - b2;
-	EXPECT_EQ(b3.a.head->c, 1);
+	EXPECT_EQ(b3.a.head->p, 123);
 }
 TEST(pol, sub_2)
 {
@@ -309,14 +309,14 @@ TEST(pol, sub_2)
 	List b;
 	a.Insert_begin(120, 14);
 	a.Insert_begin(121, 14);
-	b.Insert_begin(121, 13);
+	a.Insert_begin(123, 13);
 	b.Insert_begin(120, 14);
 	b.Insert_begin(123, 14);
 	pol b1(a);
 	pol b2(b);
 	pol b3;
 	b3 = b1 - b2;
-	EXPECT_EQ(b3.a.head->next->c, -14);
+	EXPECT_EQ(b3.a.head->c, 14);
 }
 TEST(pol, mul_pol_1)
 {
