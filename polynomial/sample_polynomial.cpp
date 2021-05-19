@@ -36,10 +36,6 @@ int main()
     result.print();
     cout << endl;
     
-    cout << endl << "Введите точку, для вычисления в ней полинома: ";
-    float x, y, z;
-    cin >> x >> y >> z;
-    cout << pol.ValuePoint(x, y, z) << endl;
-
+  
   
 }
