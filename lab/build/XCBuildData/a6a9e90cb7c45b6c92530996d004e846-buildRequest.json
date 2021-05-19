@@ -1,0 +1,63 @@
+{
+  "buildCommand" : "prepareForIndexing",
+  "configuredTargets" : [
+    {
+      "guid" : "e52cfdfe8b1dcc3b4d1544da65ff7986383bbbd4d9a25b2e154e2457f0c3afeb"
+    },
+    {
+      "guid" : "e52cfdfe8b1dcc3b4d1544da65ff798613c3e721e4a5e40d14c9eb8db75852e0"
+    },
+    {
+      "guid" : "e52cfdfe8b1dcc3b4d1544da65ff79860520536cb91111aedf7c5d02af22509c"
+    },
+    {
+      "guid" : "e52cfdfe8b1dcc3b4d1544da65ff7986c6e705da9e75a68308b89fd4edb1bee9"
+    },
+    {
+      "guid" : "e52cfdfe8b1dcc3b4d1544da65ff79869c03b21e6888c269c536fca94f3356a3"
+    }
+  ],
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx11.3",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/viktoriatomacinskaya/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/viktoriatomacinskaya/Library/Developer/Xcode/DerivedData/Project-grbgxhbrofptxrcgfilfnfcbshbq/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/viktoriatomacinskaya/Library/Developer/Xcode/DerivedData/Project-grbgxhbrofptxrcgfilfnfcbshbq/Index/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

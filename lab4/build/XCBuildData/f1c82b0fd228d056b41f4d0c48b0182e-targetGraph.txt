@@ -1,0 +1,14 @@
+Target dependency graph (5 targets)
+ZERO_CHECK in Project
+gtest in Project, depends on:
+ZERO_CHECK in Project (explicit)
+polynomial_test in Project, depends on:
+gtest in Project (explicit)
+ZERO_CHECK in Project (explicit)
+polynomial in Project, depends on:
+ZERO_CHECK in Project (explicit)
+ALL_BUILD in Project, depends on:
+polynomial_test in Project (explicit)
+polynomial in Project (explicit)
+gtest in Project (explicit)
+ZERO_CHECK in Project (explicit)

@@ -1,0 +1,5 @@
+/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab4/CMakeFiles/ALL_BUILD.dir
+/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab4/CMakeFiles/ZERO_CHECK.dir
+/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab4/polynomial/CMakeFiles/polynomial.dir
+/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab4/polynomial_test/CMakeFiles/polynomial_test.dir
+/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab4/gtest/CMakeFiles/gtest.dir

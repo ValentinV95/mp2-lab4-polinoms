@@ -1,0 +1,1136 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		0604371CD65B453F8D549408 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7B465440E9AF4161BE5F8C94 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				D44D619C0DA94389BA2A95B8 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		550FF0D0D12344F0BF8A00DF /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C8ABB803A13C49CF99ED0EE8 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				CCA6AD4F4A124359A3AD5A3A /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				CE6F7200214642FC84A944E1 /* PBXTargetDependency */,
+				D93D64FD12294DF2AD58E5C5 /* PBXTargetDependency */,
+				BED74ED696FA47B9A99A18DD /* PBXTargetDependency */,
+				EFFC95A50490451180C6ADC9 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		13A3701581194A5C825603DA /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_main.cpp */ = {isa = PBXBuildFile; fileRef = 649DF607FEBB4455B28F7828 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_main.cpp */; };
+		15EB087E8B554359A5AACAC9 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 33D722BF0D1B4838AF0261C2 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/CMakeLists.txt */; };
+		1C8CC225295B4F15A2D606A8 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.h */ = {isa = PBXBuildFile; fileRef = 941B8E2B9EAD41BD95096B42 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.h */; };
+		1FDB11C02E2E4C53AC967821 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/sample_polynomial.cpp */ = {isa = PBXBuildFile; fileRef = 8236FAA4260E4C6DAB2BED0F /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/sample_polynomial.cpp */; };
+		25AA0DFDA86C41F882927DC2 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_polynomial.cpp */ = {isa = PBXBuildFile; fileRef = CF4FF09C6A284FAA840CB363 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_polynomial.cpp */; };
+		461B0D1879AF4E1E82F7EEB5 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 5942B325397E4111BDC00382 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/CMakeLists.txt */; };
+		86E045CBA1894C48AE293991 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/gtest-all.cc */ = {isa = PBXBuildFile; fileRef = A205BB8A3DEA427AB4BD9843 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/gtest-all.cc */; };
+		99FC6314B756455EACDBE6A3 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 98D72D91388A4AA9BD226304 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/CMakeLists.txt */; };
+		AAC8ABB781C54430989136A4 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */ = {isa = PBXBuildFile; fileRef = 797658962C454D399D3D351C /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */; };
+		F6D2AF96AEC942CCAE10ACDB /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */ = {isa = PBXBuildFile; fileRef = 354C5EA0B00845C5B08F081E /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		03E1D36143E943A2BBF5CB2E /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		0E50095172814297B3D84AD6 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		4FD7817A0CC048D6AD8B7174 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		77A7A2BA3319449B80BFB49E /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		0CB9F1F814254623AA8D69F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0604371CD65B453F8D549408;
+			remoteInfo = ZERO_CHECK;
+		};
+		1E39ECF4BCEF4FA286B1FBAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0604371CD65B453F8D549408;
+			remoteInfo = ZERO_CHECK;
+		};
+		3079AAFDFD624915AB658EF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03AC75F7208C4345A0E1E944;
+			remoteInfo = polynomial_test;
+		};
+		40C1278380824C688B64B166 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0604371CD65B453F8D549408;
+			remoteInfo = ZERO_CHECK;
+		};
+		64FF02FD57D24EECA60E2C21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C47232BDEDC840C8B2DEE0D1;
+			remoteInfo = polynomial;
+		};
+		67F3FDC855FF4E0C8310C3BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0604371CD65B453F8D549408;
+			remoteInfo = ZERO_CHECK;
+		};
+		8DF685A1AF874AE4A0EBAC64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17BB1F4604204D19BB69F4BF;
+			remoteInfo = gtest;
+		};
+		FE5D1884FE4D4D2488B56608 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17BB1F4604204D19BB69F4BF;
+			remoteInfo = gtest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		33D722BF0D1B4838AF0261C2 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = polynomial/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		354C5EA0B00845C5B08F081E /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = polynomial.cpp; path = polynomial/polynomial.cpp; sourceTree = SOURCE_ROOT; };
+		5803EB0887B4445784455449 /* gtest */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgtest.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5942B325397E4111BDC00382 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = polynomial_test/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		649DF607FEBB4455B28F7828 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = test_main.cpp; path = polynomial_test/test_main.cpp; sourceTree = SOURCE_ROOT; };
+		699455A0599048F28E94A04A /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		797658962C454D399D3D351C /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = polynomial.cpp; path = polynomial/polynomial.cpp; sourceTree = SOURCE_ROOT; };
+		8236FAA4260E4C6DAB2BED0F /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/sample_polynomial.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sample_polynomial.cpp; path = polynomial/sample_polynomial.cpp; sourceTree = SOURCE_ROOT; };
+		941B8E2B9EAD41BD95096B42 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = polynomial.h; path = polynomial/polynomial.h; sourceTree = SOURCE_ROOT; };
+		98D72D91388A4AA9BD226304 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = gtest/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9A32622061C8477BA2147179 /* polynomial */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = polynomial; sourceTree = BUILT_PRODUCTS_DIR; };
+		A205BB8A3DEA427AB4BD9843 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/gtest-all.cc */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "gtest-all.cc"; path = "gtest/gtest-all.cc"; sourceTree = SOURCE_ROOT; };
+		CF4FF09C6A284FAA840CB363 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_polynomial.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = test_polynomial.cpp; path = polynomial_test/test_polynomial.cpp; sourceTree = SOURCE_ROOT; };
+		E6D287B603D94EB38D50954C /* polynomial_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = polynomial_test; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		621EB7B80C1245C981CB1CDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B83A51F128B4A849CE85C74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999091A3B4904D85A82E9AC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		159A729A0FF2460092406828 = {
+			isa = PBXGroup;
+			children = (
+				9B0E58B585A14E91AA1EFA11 /* ALL_BUILD */,
+				EA7A7D068B484D4391490753 /* polynomial */,
+				71464F7B61864E69B70D3A8A /* polynomial_test */,
+				8F293615A1794B12BE2574EA /* gtest */,
+				9DFED9347D2A4D4587F1B63F /* Products */,
+				44FC89CAC15C4689AC07AEC3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1EAD0CD39CAA47A493C93868 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				941B8E2B9EAD41BD95096B42 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		374D386CF3BF4AF3B69B19F8 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				354C5EA0B00845C5B08F081E /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */,
+				8236FAA4260E4C6DAB2BED0F /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/sample_polynomial.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		44FC89CAC15C4689AC07AEC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71464F7B61864E69B70D3A8A /* polynomial_test */ = {
+			isa = PBXGroup;
+			children = (
+				9BA2551F5A684730933058BE /* Source Files */,
+				5942B325397E4111BDC00382 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/CMakeLists.txt */,
+			);
+			name = polynomial_test;
+			sourceTree = "<group>";
+		};
+		80774B0940A54B5FBD1C0459 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		84CD319C0C1640BD8D099EC8 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				A205BB8A3DEA427AB4BD9843 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/gtest-all.cc */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		8F293615A1794B12BE2574EA /* gtest */ = {
+			isa = PBXGroup;
+			children = (
+				84CD319C0C1640BD8D099EC8 /* Source Files */,
+				98D72D91388A4AA9BD226304 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/CMakeLists.txt */,
+			);
+			name = gtest;
+			sourceTree = "<group>";
+		};
+		9B0E58B585A14E91AA1EFA11 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				80774B0940A54B5FBD1C0459 /* CMake Rules */,
+				699455A0599048F28E94A04A /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		9BA2551F5A684730933058BE /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				797658962C454D399D3D351C /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */,
+				649DF607FEBB4455B28F7828 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_main.cpp */,
+				CF4FF09C6A284FAA840CB363 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_polynomial.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		9DFED9347D2A4D4587F1B63F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5803EB0887B4445784455449 /* gtest */,
+				9A32622061C8477BA2147179 /* polynomial */,
+				E6D287B603D94EB38D50954C /* polynomial_test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA7A7D068B484D4391490753 /* polynomial */ = {
+			isa = PBXGroup;
+			children = (
+				374D386CF3BF4AF3B69B19F8 /* Source Files */,
+				1EAD0CD39CAA47A493C93868 /* Header Files */,
+				33D722BF0D1B4838AF0261C2 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/CMakeLists.txt */,
+			);
+			name = polynomial;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03AC75F7208C4345A0E1E944 /* polynomial_test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9CC30057E694F12B2CCBC19 /* Build configuration list for PBXNativeTarget "polynomial_test" */;
+			buildPhases = (
+				337484BB955F403C800463F8 /* Sources */,
+				6B83A51F128B4A849CE85C74 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0225B930790741C1AD5EF5E8 /* PBXTargetDependency */,
+				5454F67D74B04A80905301EA /* PBXTargetDependency */,
+			);
+			name = polynomial_test;
+			productName = polynomial_test;
+			productReference = E6D287B603D94EB38D50954C /* polynomial_test */;
+			productType = "com.apple.product-type.tool";
+		};
+		17BB1F4604204D19BB69F4BF /* gtest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BF00457D0F141618102CF92 /* Build configuration list for PBXNativeTarget "gtest" */;
+			buildPhases = (
+				E558132B6ECA494DA2CCEE40 /* Sources */,
+				999091A3B4904D85A82E9AC2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9DA94AD996F485AB54340A5 /* PBXTargetDependency */,
+			);
+			name = gtest;
+			productName = gtest;
+			productReference = 5803EB0887B4445784455449 /* gtest */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C47232BDEDC840C8B2DEE0D1 /* polynomial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 666CE976C1104A3E80DBDE49 /* Build configuration list for PBXNativeTarget "polynomial" */;
+			buildPhases = (
+				22D05930776948B4BC2F7DF0 /* Sources */,
+				621EB7B80C1245C981CB1CDC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				464946C98A714B0BBAF4E45B /* PBXTargetDependency */,
+			);
+			name = polynomial;
+			productName = polynomial;
+			productReference = 9A32622061C8477BA2147179 /* polynomial */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21A4BAFDD61A4AE3938AB395 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1250;
+			};
+			buildConfigurationList = 004BB0AE6D2949D28C1DB0E6 /* Build configuration list for PBXProject "Project" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				0E50095172814297B3D84AD6 /* Debug */,
+				4FD7817A0CC048D6AD8B7174 /* Release */,
+				03E1D36143E943A2BBF5CB2E /* MinSizeRel */,
+				77A7A2BA3319449B80BFB49E /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 159A729A0FF2460092406828;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				550FF0D0D12344F0BF8A00DF /* ALL_BUILD */,
+				0604371CD65B453F8D549408 /* ZERO_CHECK */,
+				17BB1F4604204D19BB69F4BF /* gtest */,
+				C47232BDEDC840C8B2DEE0D1 /* polynomial */,
+				03AC75F7208C4345A0E1E944 /* polynomial_test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05417187ECC947ADBADA347C = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7BCF5CBA8FA24640816B8E3F = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		CCA6AD4F4A124359A3AD5A3A /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		D44D619C0DA94389BA2A95B8 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+"/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab
+  make -f /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab
+  make -f /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab
+  make -f /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab
+  make -f /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22D05930776948B4BC2F7DF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D2AF96AEC942CCAE10ACDB /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */,
+				1FDB11C02E2E4C53AC967821 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/sample_polynomial.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		337484BB955F403C800463F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAC8ABB781C54430989136A4 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial/polynomial.cpp */,
+				13A3701581194A5C825603DA /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_main.cpp */,
+				25AA0DFDA86C41F882927DC2 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial_test/test_polynomial.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E558132B6ECA494DA2CCEE40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86E045CBA1894C48AE293991 /* /Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest/gtest-all.cc */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0225B930790741C1AD5EF5E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0604371CD65B453F8D549408 /* ZERO_CHECK */;
+			targetProxy = 1E39ECF4BCEF4FA286B1FBAB /* PBXContainerItemProxy */;
+		};
+		464946C98A714B0BBAF4E45B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0604371CD65B453F8D549408 /* ZERO_CHECK */;
+			targetProxy = 0CB9F1F814254623AA8D69F1 /* PBXContainerItemProxy */;
+		};
+		5454F67D74B04A80905301EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17BB1F4604204D19BB69F4BF /* gtest */;
+			targetProxy = FE5D1884FE4D4D2488B56608 /* PBXContainerItemProxy */;
+		};
+		BED74ED696FA47B9A99A18DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17BB1F4604204D19BB69F4BF /* gtest */;
+			targetProxy = 8DF685A1AF874AE4A0EBAC64 /* PBXContainerItemProxy */;
+		};
+		CE6F7200214642FC84A944E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0604371CD65B453F8D549408 /* ZERO_CHECK */;
+			targetProxy = 40C1278380824C688B64B166 /* PBXContainerItemProxy */;
+		};
+		D93D64FD12294DF2AD58E5C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C47232BDEDC840C8B2DEE0D1 /* polynomial */;
+			targetProxy = 64FF02FD57D24EECA60E2C21 /* PBXContainerItemProxy */;
+		};
+		D9DA94AD996F485AB54340A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0604371CD65B453F8D549408 /* ZERO_CHECK */;
+			targetProxy = 67F3FDC855FF4E0C8310C3BD /* PBXContainerItemProxy */;
+		};
+		EFFC95A50490451180C6ADC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03AC75F7208C4345A0E1E944 /* polynomial_test */;
+			targetProxy = 3079AAFDFD624915AB658EF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0848B48D2F354F43BE579502 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ();
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ();
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = polynomial;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/polynomial";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		09F54C9447BE4B5FA2C63224 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		1481C0541E744BF08D33DE00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ();
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ();
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = polynomial;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/polynomial";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		16ADADAFA93248348F29CB7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "   ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		39854585CACD4872A9827616 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/build";
+			};
+			name = RelWithDebInfo;
+		};
+		51A713BFB4254CD6A1BC8F19 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ();
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ();
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/gtest/RelWithDebInfo/libgtest.a");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = polynomial_test;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/polynomial_test";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		61ADEE765E004186868923B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		61DB73EF60094044ACD9701A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		62C72DBF526945FAB0D36ACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ();
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ();
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/gtest/Release/libgtest.a");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = polynomial_test;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/polynomial_test";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		6ACEC9464D324271B99F680D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		7F9DDAF4FAB445CD948CDB5C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		9B048401F8064758B6FABF57 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		A215A33D7287466EA2EB30B2 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ();
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ();
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/gtest/MinSizeRel/libgtest.a");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = polynomial_test;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/polynomial_test";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		A4657113F6BD4ADB941383AA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ();
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ();
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = polynomial;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/polynomial";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A99CBD69453145A280A7F5F1 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B5C3DFA8F66D489893B2F725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ();
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ();
+				OTHER_CPLUSPLUSFLAGS = "   ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = polynomial;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/polynomial";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		B710BBC80469490FB62106E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/build";
+			};
+			name = Release;
+		};
+		D74F4A49499242D8BE37D36C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/build";
+			};
+			name = MinSizeRel;
+		};
+		D7A5DE413BD64974BC438619 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 11.2;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk;
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/build";
+			};
+			name = Debug;
+		};
+		D876C5948CDC45328384A8B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		DCA761A3A08C46A09A26ECC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		DEB4D3C93082455F949F0EE0 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = gtest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/gtest";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		F9D8730D2AFD4C69B4FBCFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = ();
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/polynomial","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/gtest");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = ();
+				OTHER_CPLUSPLUSFLAGS = "   ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/gtest/Debug/libgtest.a");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = polynomial_test;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab/polynomial_test";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		FADFB230403C4700BCB8423F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/viktoriatomacinskaya/Desktop/mp2-lab4-polinoms/lab";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		004BB0AE6D2949D28C1DB0E6 /* Build configuration list for PBXProject "Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7A5DE413BD64974BC438619 /* Debug */,
+				B710BBC80469490FB62106E6 /* Release */,
+				D74F4A49499242D8BE37D36C /* MinSizeRel */,
+				39854585CACD4872A9827616 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1BF00457D0F141618102CF92 /* Build configuration list for PBXNativeTarget "gtest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16ADADAFA93248348F29CB7F /* Debug */,
+				DCA761A3A08C46A09A26ECC6 /* Release */,
+				7F9DDAF4FAB445CD948CDB5C /* MinSizeRel */,
+				DEB4D3C93082455F949F0EE0 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		666CE976C1104A3E80DBDE49 /* Build configuration list for PBXNativeTarget "polynomial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C3DFA8F66D489893B2F725 /* Debug */,
+				1481C0541E744BF08D33DE00 /* Release */,
+				0848B48D2F354F43BE579502 /* MinSizeRel */,
+				A4657113F6BD4ADB941383AA /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7B465440E9AF4161BE5F8C94 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D876C5948CDC45328384A8B4 /* Debug */,
+				FADFB230403C4700BCB8423F /* Release */,
+				9B048401F8064758B6FABF57 /* MinSizeRel */,
+				09F54C9447BE4B5FA2C63224 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B9CC30057E694F12B2CCBC19 /* Build configuration list for PBXNativeTarget "polynomial_test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9D8730D2AFD4C69B4FBCFD9 /* Debug */,
+				62C72DBF526945FAB0D36ACF /* Release */,
+				A215A33D7287466EA2EB30B2 /* MinSizeRel */,
+				51A713BFB4254CD6A1BC8F19 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C8ABB803A13C49CF99ED0EE8 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ACEC9464D324271B99F680D /* Debug */,
+				61ADEE765E004186868923B2 /* Release */,
+				61DB73EF60094044ACD9701A /* MinSizeRel */,
+				A99CBD69453145A280A7F5F1 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21A4BAFDD61A4AE3938AB395 /* Project object */;
+}
