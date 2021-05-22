@@ -64,23 +64,25 @@ int main()
 	{
 	case 1:
 	{
-		std::cout << "(";
+		b1.print();
+		/*std::cout << "(";
 		for (int i = 0; i < b1.a.n; i++)
 		{
 			b1.a.Print(i);
 			if (i != b1.a.n - 1)
 				std::cout << "  +  ";
 		}
-		std::cout << ")";
+		std::cout << ")";*/
 		std::cout << "  +  ";
-		std::cout << "(";
+		b2.print();
+		/*std::cout << "(";
 		for (int i = 0; i < b2.a.n; i++)
 		{
 			b2.a.Print(i);
 			if (i != b2.a.n - 1)
 				std::cout << "  +  ";
 		}
-		std::cout << ")";
+		std::cout << ")";*/
 		std::cout << "  =  ";
 		b3 = b1 + b2;
 		for (int i = 0; i < b3.a.n; i++)

@@ -1,0 +1,8 @@
+﻿  lab4_polinoms.cpp
+  Создание кода
+C:\Users\user\mp2-lab4-polinoms\lab4_polinoms\lab4_polinoms\polinoms.h(198): warning C4172: возвращение адреса локальной или временной переменной : c
+  4 of 31 functions (12.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  lab4_polinoms.vcxproj -> C:\Users\user\mp2-lab4-polinoms\lab4_polinoms\x64\Release\lab4_polinoms.exe

@@ -2,6 +2,7 @@
 #ifndef _POLINOM_H_
 #define _POLINOM_H_
 #include "list.h"
+double e = 0.000000001;
 
 class pol
 {
@@ -37,6 +38,7 @@ public:
 			tmp = tmp->next;
 		}
 		tmp->c *= k;
+		b.DelDups();
 		b.DelZero();
 		return(b);
 	}
@@ -72,13 +74,13 @@ public:
 		Node* tmp1 = tmp;
 		while (tmp1->next != NULL)
 		{
-			if (tmp1->c == 0)
+			if (abs(tmp1->c) < e)
 				k++;
 			tmp1 = tmp1->next;
 		}
-		if (tmp1->c == 0)
+		if (abs(tmp1->c)<e)
 			k++;
-		while ((a.head != NULL) && (a.head->c == 0))
+		while ((a.head != NULL) && (abs(a.head->c)<e))
 		{
 			a.head = a.head->next;
 			a.n--;
@@ -86,12 +88,10 @@ public:
 		}
 		while (k != 0)
 		{
-
 			tmp = a.head;
-
 			while ((tmp != NULL) && (tmp->next != NULL))
 			{
-				if (tmp->next->c == 0)
+				if (abs(tmp->next->c) < e)
 				{
 					a.n--;
 					k--;
@@ -117,6 +117,7 @@ public:
 		DelDups();
 		DelZero();
 		return(*this);
+		
 		/*Node* tmp1 = a.head;
 		Node* tmp2 = b.a.head;
 		while (tmp1->next != NULL)
@@ -192,6 +193,7 @@ public:
 		if ((((tmp1->p) / 100 + (tmp2->p) / 100) > 9) || ((((tmp1->p) % 100) / 10 + ((tmp2->p) % 100) / 10) > 9) || (((tmp1->p) % 10 + (tmp2->p) % 10) > 9))
 			throw "Incorrect power";
 		c.a.Insert_end(tmp1->p + tmp2->p, tmp1->c * tmp2->c);
+		c.DelDups();
 		c.DelZero();
 		return(c);
 	}
@@ -202,7 +204,19 @@ public:
 		c.Mull(-1);
 		return(*this + c);
 	}
-
+	//
+	void print()
+	{
+		std::cout << "(";
+		for (int i = 0; i < a.n; i++)
+		{
+			a.Print(i);
+			if (i != a.n - 1)
+				std::cout << "  +  ";
+		}
+		std::cout << ")";
+	}
+	//
 };
 
 

@@ -1,4 +1,4 @@
 ﻿  lab4_polinoms.cpp
-C:\Users\user\mp2-lab4-polinoms\lab4_polinoms\lab4_polinoms\polinoms.h(41): warning C4172: возвращение адреса локальной или временной переменной : b
 C:\Users\user\mp2-lab4-polinoms\lab4_polinoms\lab4_polinoms\polinoms.h(196): warning C4172: возвращение адреса локальной или временной переменной : c
+C:\Users\user\mp2-lab4-polinoms\lab4_polinoms\lab4_polinoms\polinoms.h(41): warning C4172: возвращение адреса локальной или временной переменной : b
   lab4_polinoms.vcxproj -> C:\Users\user\mp2-lab4-polinoms\lab4_polinoms\x64\Debug\lab4_polinoms.exe

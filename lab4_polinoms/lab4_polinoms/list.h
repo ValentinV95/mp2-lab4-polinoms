@@ -56,6 +56,7 @@ public:
 	void Del(int k)
 	{
 		Node* c = head;
+		Node* b = head;
 		if (head == nullptr)
 			return;
 
@@ -69,16 +70,18 @@ public:
 		{
 			if (c->next->p == k)
 			{
+				b = c->next;
 				c->next = c->next->next;
+				delete b;
 				n--;
 				break;
 			}
 			c = c->next;
 		}
-		c = head;
-		while ((c != NULL) && (c->next != NULL))
-			c = c->next;
-		tail = c;
+		b = head;
+		while ((b != NULL) && (b->next != NULL))
+			b = b->next;
+		tail = b;
 
 	}
 	void Print(int k)
