@@ -329,7 +329,7 @@ TEST(pol, mul_pol_1)
 	pol b1(a);
 	pol b2(b);
 	pol b3;
-	b3 = b1 * b2;
+	b3 = b1.mullpol(b2);
 	EXPECT_EQ(b3.a.head->p, 244);
 }
 TEST(pol, mul_pol_2)
@@ -344,7 +344,7 @@ TEST(pol, mul_pol_2)
 	pol b1(a);
 	pol b2(b);
 	pol b3;
-	b3 = b1 * b2;
+	b3 = b1.mullpol(b2);
 	EXPECT_EQ(b3.a.head->next->c, 6);
 }
 TEST(pol, mul_pol_3)
@@ -359,7 +359,7 @@ TEST(pol, mul_pol_3)
 	pol b1(a);
 	pol b2(b);
 	pol b3;
-	b3 = b1 * b2;
+	b3 = b1.mullpol(b2);
 	EXPECT_EQ(b3.a.tail->c,12);
 }
 TEST(pol, mul_pol_4)
@@ -371,7 +371,7 @@ TEST(pol, mul_pol_4)
 	pol b1(a);
 	pol b2(b);
 	pol b3;
-	b3 = b1 * b2;
+	b3 = b1.mullpol(b2);
 	EXPECT_EQ(NULL, b3.a.head);
 }
 TEST(pol, mul_pol_5)
@@ -386,7 +386,7 @@ TEST(pol, mul_pol_5)
 	pol b1(a);
 	pol b2(b);
 	pol b3;
-	b3 = b1 * b2;
+	b3 = b1.mullpol(b2);
 	EXPECT_EQ(12, b3.a.tail->c);
 }
 TEST(pol, mul_pol_6)
@@ -412,6 +412,6 @@ TEST(pol, mul_pol_7)
 	pol b1(a);
 	pol b2(b);
 	pol b3;
-	b3 = b1 * b2;
+	b3 = b1.mullpol(b2);
 	EXPECT_EQ(5, b3.a.n);
 }

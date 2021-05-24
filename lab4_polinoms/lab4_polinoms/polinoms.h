@@ -162,6 +162,41 @@ public:
 		DelZero();
 		return(*this);*/
 	}
+	pol mullpol(pol b)
+	{
+		pol c;
+		Node* tmp1 = a.head;
+		Node* tmp2 = b.a.head;
+		while (tmp1->next != NULL)
+		{
+			tmp2 = b.a.head;
+			while (tmp2->next != NULL)
+			{
+				if ((((tmp1->p) / 100 + (tmp2->p) / 100) > 9) || ((((tmp1->p) % 100) / 10 + ((tmp2->p) % 100) / 10) > 9) || (((tmp1->p) % 10 + (tmp2->p) % 10) > 9))
+					throw "Incorrect power";
+				c.a.Insert_end(tmp1->p + tmp2->p, tmp1->c * tmp2->c);
+				tmp2 = tmp2->next;
+			}
+			if ((((tmp1->p) / 100 + (tmp2->p) / 100) > 9) || ((((tmp1->p) % 100) / 10 + ((tmp2->p) % 100) / 10) > 9) || (((tmp1->p) % 10 + (tmp2->p) % 10) > 9))
+				throw "Incorrect power";
+			c.a.Insert_end(tmp1->p + tmp2->p, tmp1->c * tmp2->c);
+			tmp1 = tmp1->next;
+		}
+		tmp2 = b.a.head;
+		while (tmp2->next != NULL)
+		{
+			if ((((tmp1->p) / 100 + (tmp2->p) / 100) > 9) || ((((tmp1->p) % 100) / 10 + ((tmp2->p) % 100) / 10) > 9) || (((tmp1->p) % 10 + (tmp2->p) % 10) > 9))
+				throw "Incorrect power";
+			c.a.Insert_end(tmp1->p + tmp2->p, tmp1->c * tmp2->c);
+			tmp2 = tmp2->next;
+		}
+		if ((((tmp1->p) / 100 + (tmp2->p) / 100) > 9) || ((((tmp1->p) % 100) / 10 + ((tmp2->p) % 100) / 10) > 9) || (((tmp1->p) % 10 + (tmp2->p) % 10) > 9))
+			throw "Incorrect power";
+		c.a.Insert_end(tmp1->p + tmp2->p, tmp1->c * tmp2->c);
+		c.DelDups();
+		c.DelZero();
+		return(c);
+	}
 	pol& operator*(pol b)
 	{
 		pol c;
