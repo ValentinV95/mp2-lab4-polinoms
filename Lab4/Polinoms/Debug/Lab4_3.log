@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  main_polinom.cpp
+b:\repo\test\lab4_3_test\lab4_3\main_polinom.cpp(4): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  Polinom.cpp
+  Создание кода...
+  Lab4_3.vcxproj -> B:\Repo\test\Lab4_3_test\Debug\Lab4_3.exe
