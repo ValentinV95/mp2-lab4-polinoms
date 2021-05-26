@@ -120,8 +120,15 @@ Polinom Polinom::operator*(Polinom& p)
 	{
 		for (j = p.head; j != 0; j = j->next)
 		{
-			Monom f(i->Mult(*j));
-			result.Add(new Monom(f));
+			try
+			{
+				Monom f(i->Mult(*j));
+				result.Add(new Monom(f));
+			}
+			catch (...)
+			{
+				cout << "Multiplication: Incorrect Power" << endl;
+			}
 		}
 	}
 	result.Privide();
