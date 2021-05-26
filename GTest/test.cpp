@@ -7,6 +7,27 @@
 #include "../LR4-2/List.cpp"
 
 
+TEST(TestInputGrade, ConstructorSetGrade) {
+	Monomial m = Monomial(1, 1111);
+	EXPECT_EQ(m.getGrade(), 0);
+	m = Monomial(1, 111);
+	EXPECT_EQ(m.getGrade(), 111);
+	m = Monomial(1, -111);
+	EXPECT_EQ(m.getGrade(), 0);
+}
+
+TEST(TestSetGrade, SetGradeFunk) {
+	Monomial m = Monomial(1, 1111);
+	EXPECT_EQ(m.getGrade(), 0);
+
+	m.setGrade(1110);
+	EXPECT_EQ(m.getGrade(), 0);
+	m.setGrade(111);
+	EXPECT_EQ(m.getGrade(), 111);
+	m.setGrade(-1110);
+	EXPECT_EQ(m.getGrade(), 0);
+}
+
 TEST(TestMathOperators, TestingPlus) {
 	Monomial m1 = Monomial(1, 110);
 	Monomial m2 = Monomial(2, 120);
@@ -28,6 +49,32 @@ TEST(TestMathOperators, TestingPlus) {
 	EXPECT_EQ(test.getMonoms().length(), 1);
 	EXPECT_EQ(test.getMonoms()[0].is_eq(Monomial(5.5, 120)), true);
 	// test.getMonoms().display();
+
+	m1 = Monomial(1, 110);
+	m2 = Monomial(1, 120);
+	m3 = Monomial(1, 110);
+	m4 = Monomial(1, 120);
+
+	l1 = List();
+	l2 = List();
+
+	l1.add(m1);
+	l1.add(m2);
+	l2.add(m3);
+	l2.add(m4);
+
+	p1 = Polynomial(l1);
+	p2 = Polynomial(l2);
+
+
+	test = p1 + p2;
+
+	EXPECT_EQ(test.getMonoms().length(), 2);
+	EXPECT_EQ(test.getMonoms()[0].is_eq(Monomial(2, 110)), true);
+	EXPECT_EQ(test.getMonoms()[1].is_eq(Monomial(2, 120)), true);
+
+
+
 }
 
 TEST(TestMathOperators, TestMultiple) {
@@ -53,6 +100,46 @@ TEST(TestMathOperators, TestMultiple) {
 	EXPECT_EQ(test.getMonoms()[1].is_eq(Monomial(1.5, 230)), true);
 	EXPECT_EQ(test.getMonoms()[2].is_eq(Monomial(7, 240)), true);
 
+
+	m1 = Monomial(1, 110);
+	m2 = Monomial(1, 120);
+	m3 = Monomial(1, 110);
+	m4 = Monomial(1, 120);
+
+	l1 = List();
+	l2 = List();
+
+	l1.add(m1);
+	l1.add(m2);
+	l2.add(m3);
+	l2.add(m4);
+
+	p1 = Polynomial(l1);
+	p2 = Polynomial(l2);
+
+
+	test = p1 * p2;
+
+	EXPECT_EQ(test.getMonoms().length(), 3);
+	EXPECT_EQ(test.getMonoms()[0].is_eq(Monomial(1, 220)), true);
+	EXPECT_EQ(test.getMonoms()[1].is_eq(Monomial(2, 230)), true);
+	EXPECT_EQ(test.getMonoms()[2].is_eq(Monomial(1, 240)), true);
+
+
+	m1 = Monomial(1, 510);
+	m2 = Monomial(1, 520);
+
+	l1 = List();
+	l2 = List();
+
+	l1.add(m2);
+	l2.add(m1);
+
+	p1 = Polynomial(l1);
+	p2 = Polynomial(l2);
+
+	test = p1 * p2;
+	EXPECT_EQ(test.getMonoms().length(), 0);
 	// test.getMonoms().display();
 }
 
@@ -78,6 +165,27 @@ TEST(TestMathOperators, TestingMinus) {
 	EXPECT_EQ(test.getMonoms()[0].is_eq(Monomial(2, 110)), true);
 	EXPECT_EQ(test.getMonoms()[1].is_eq(Monomial(-1.5, 120)), true);
 	//test.getMonoms().display();
+
+	m1 = Monomial(1, 110);
+	m2 = Monomial(1, 120);
+	m3 = Monomial(1, 110);
+	m4 = Monomial(1, 120);
+
+	l1 = List();
+	l2 = List();
+
+	l1.add(m1);
+	l1.add(m2);
+	l2.add(m3);
+	l2.add(m4);
+
+	p1 = Polynomial(l1);
+	p2 = Polynomial(l2);
+
+
+	test = p1 - p2;
+
+	EXPECT_EQ(test.getMonoms().length(), 0);
 }
 
 
