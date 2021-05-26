@@ -29,6 +29,23 @@ void Monom::Plus(Monom* m)
 
 Monom Monom::Mult(Monom& m)
 {
+    int k1, k2;
+
+    k1 = this->step % 10;
+    k2 = m.step % 10;
+    if (k1 + k2 > 9)
+        throw "incorrect power";
+
+    k1 = this->step % 100 / 10;
+    k2 = m.step % 100 / 10;
+    if (k1 + k2 > 9)
+        throw "incorrect power";
+
+    k1 = this->step / 100;
+    k2 = m.step / 100;
+    if (k1 + k2 > 9)
+        throw "incorrect power";
+
     Monom result;
     result.coef = this->coef * m.coef;
     result.step= this->step + m.step;
