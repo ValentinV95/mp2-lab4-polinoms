@@ -9290,6 +9290,8 @@ linked_ptr<T> make_linked_ptr(T* ptr) {
 #ifndef GTEST_INCLUDE_GTEST_GTEST_PRINTERS_H_
 #define GTEST_INCLUDE_GTEST_GTEST_PRINTERS_H_
 
+//#define _SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING
+
 #include <ostream>  // NOLINT
 #include <sstream>
 #include <string>
